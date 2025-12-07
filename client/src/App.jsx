@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import ContactPage from './pages/ContactPage.jsx';
-import ScrollToTop from './components/scrollToTop.jsx'; 
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 function App() {
   return (
