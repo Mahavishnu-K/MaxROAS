@@ -97,11 +97,11 @@ const Growth = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="pt-24 px-4 min-h-screen flex flex-col justify-center bg-black">
+    <section ref={containerRef} className="pt-24 px-15 lg:px-4 min-h-screen flex flex-col justify-center bg-white">
       <div className="container mx-auto max-w-[1400px]">
         
         {/* --- Header / Title --- */}
-        <h2 className="text-4xl text-white md:text-6xl font-bold text-left mb-4">
+        <h2 className="text-4xl text-black md:text-6xl font-bold text-left mb-4">
             Real Results.
             <span className="opacity-50 font-light"> Real Growth.</span>
         </h2>
@@ -118,7 +118,7 @@ const Growth = () => {
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Ad Campaigns</span>
                     </div>
                     {/* Added 'tabular-nums' to ensure numbers don't jitter while counting */}
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-4xl text-black md:text-6xl tabular-nums">
                         <span ref={campaignRef}>0</span>
                     </h3>
                 </div>
@@ -128,7 +128,7 @@ const Growth = () => {
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Sessions</span>
                     </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-4xl text-black md:text-6xl tabular-nums">
                         <span ref={sessionRef}>0</span>
                     </h3>
                 </div>
@@ -138,7 +138,7 @@ const Growth = () => {
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Total Sales</span>
                     </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-4xl text-black md:text-6xl tabular-nums">
                         <span ref={salesRef}>0</span>
                     </h3>
                 </div>
@@ -148,7 +148,7 @@ const Growth = () => {
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Orders</span>                        
                     </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-4xl text-black md:text-6xl tabular-nums">
                         <span ref={orderRef}>0</span>
                     </h3>
                 </div>
@@ -158,7 +158,7 @@ const Growth = () => {
                     <div className="flex items-center gap-2">
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Conv. Rate</span>
                     </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-4xl text-black md:text-6xl tabular-nums">
                         <span ref={conversionRef}>0</span>
                     </h3>
                 </div>

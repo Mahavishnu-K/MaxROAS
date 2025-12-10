@@ -161,10 +161,9 @@ const Service = () => {
                                             
                                             uppercase ${colorClass}
                                             ${isPhrase 
-                                                ? 'text-3xl md:text-5xl lg:text-[4rem] tracking-wide' 
-                                                : 'text-5xl md:text-7xl lg:text-[5.2rem]'           
+                                                ? 'text-2xl md:text-4xl lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] tracking-wide'
+                                                : 'text-4xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] 2xl:text-[5rem]'
                                             }
-                                            
                                             mr-3 md:mr-5
                                         `}
                                     >
@@ -183,7 +182,7 @@ const Service = () => {
     );
 
     return (
-         <section className="mx-auto pt-20 relative z-0 bg-black min-h-screen">
+         <section className="mx-auto pt-20 relative z-0 bg-white min-h-screen">
             <div 
                 ref={containerRef}
                 className="container mx-auto relative z-20 overflow-hidden"
@@ -191,12 +190,12 @@ const Service = () => {
             >
                 {/* LAYER 1: Standard Services (White) */}
                 <div className="relative bg-transparent pointer-events-none">
-                   <ContentList colorClass="text-white" items={services} />
+                   <ContentList colorClass="text-black" items={services} />
                 </div>
 
                 {/* LAYER 2: Randomized Phrases (Black - Reveal) */}
                 <div 
-                    className="absolute inset-0 bg-white z-10"
+                    className="absolute inset-0 bg-black z-10"
                     style={{
                         clipPath: "circle(var(--size) at var(--x) var(--y))",
                         WebkitClipPath: "circle(var(--size) at var(--x) var(--y))",
@@ -204,7 +203,7 @@ const Service = () => {
                     }}
                 >
                     {randomizedPhrases.length > 0 && (
-                        <ContentList colorClass="text-black" items={randomizedPhrases} isPhrase={true}/>
+                        <ContentList colorClass="text-white" items={randomizedPhrases} isPhrase={true}/>
                     )}
                 </div>
             </div>

@@ -4,7 +4,7 @@ import Rounded from "../components/RoundedButton/Rounded.jsx";
 const Contact = () => {
   return (
     <section className="min-h-screen bg-white flex items-center justify-center px-4 md:px-12">
-      <div className="container mx-auto max-w-7xl flex gap-12 lg:gap-24 items-center">
+      <div className="container mx-auto pb-28 max-w-7xl flex gap-12 lg:gap-24 items-center">
         
         {/* --- LEFT COLUMN: Text & Socials --- */}
         <div className="flex flex-col justify-center h-full w-full pt-1">

@@ -4,31 +4,15 @@ import { MdOutlineArrowOutward, MdOutlineArrowForward } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ scrollToSection, refs }) => {
-  const outRef = useRef(null);
   const forwardRef = useRef(null);
   const btnRef = useRef(null);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    gsap.set(forwardRef.current, { opacity: 0, rotate: 45, x: 10, y: -10});
-  }, []);
-
   const onEnter = () => {
-    gsap.to(outRef.current, {
-      opacity: 0,
-      rotate: 45,
-      x: 10,
-      y: -10,
-      duration: 0.5,
-      ease: "power4.inOut",
-    });
 
     gsap.to(forwardRef.current, {
-      opacity: 1,
-      rotate: 0,
-      x: 0,
-      y: 0,
+      rotate: -45,
       duration: 0.5,
       ease: "power4.inOut",
     });
@@ -40,20 +24,9 @@ const Navbar = ({ scrollToSection, refs }) => {
   };
 
   const onLeave = () => {
-    gsap.to(outRef.current, {
-      opacity: 1,
-      rotate: 0,
-      x: 0,
-      y: 0,
-      duration: 0.5,
-      ease: "power4.inOut",
-    });
 
     gsap.to(forwardRef.current, {
-      opacity: 0,
-      rotate: -45,
-      x: -10,
-      y: 10,
+      rotate: 0,
       duration: 0.5,
       ease: "power4.inOut",
     });
@@ -68,7 +41,7 @@ const Navbar = ({ scrollToSection, refs }) => {
     <header className="w-full py-2 md:py-3 text-sm fixed z-40 flex flex-wrap md:justify-start md:flex-nowrap top-0 left-0">
       <nav className="container mx-auto px-7" aria-label="Global">
         
-        <div className="md:flex md:items-center md:justify-between bg-white h-[4rem] md:h-[5rem] rounded-2xl w-full px-5 md:px-3 py-2 shadow-xl">
+        <div className="md:flex md:items-center md:justify-between bg-white h-[4rem] md:h-[5rem] rounded-2xl w-full px-5 md:px-3 py-2 shadow-[0_0_20px_rgba(0,0,0,0.25)]">
 
           <div className="flex ml-5 pb-1 items-center justify-between h-full flex-shrink-0">
             <div className="flex flex-col leading-none justify-center text-black">
@@ -99,10 +72,6 @@ const Navbar = ({ scrollToSection, refs }) => {
 
               <div className="relative w-[35px] h-[35px]">
                 <MdOutlineArrowForward
-                  ref={outRef}
-                  className="absolute text-[35px]"
-                />
-                <MdOutlineArrowOutward
                   ref={forwardRef}
                   className="absolute text-[35px]"
                 />

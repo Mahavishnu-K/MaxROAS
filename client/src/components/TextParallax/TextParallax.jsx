@@ -12,12 +12,12 @@ const TextParallax = () => {
 
     // 1. Split the words into two logical rows
     const wordsTop = [
-        "Strategy", "Impact", "Data", "Insight", "Clarity", 
+        "Scale", "Impact", "Data", "Insight", "Clarity", 
         "Execution", "Focus", "Creativity"
     ];
 
     const wordsBottom = [
-        "Profit", "Results", "Revenue", "Growth", "Scale", "Maximize", 
+        "Profit", "Results", "Strategy", "Growth", "Scale", "Maximize", 
         "Performance", "Returns", "Ad Spend", "Growth Engine", "Smart Ads"
     ];
 
