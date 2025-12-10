@@ -27,29 +27,21 @@ const Hero = () => {
         });
 
         const tl = gsap.timeline();
-        // 1. Title Reveal (Word by Word)
-        tl.to(".hero-word", {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power4.out",
-        });
 
         // 2. Subtext & Guarantee Reveal
         tl.to([".hero-subtext", ".hero-btn"], {
             y: 0,
             opacity: 1,
-            duration: 0.8,
-            stagger: 0.15,
+            duration: 1,
+            stagger: 0.8,
             ease: "power3.out",
-        }, "-=0.5");
+        });
 
         tl.to(".scroll-arrow", {
             y: 0,
             duration: 1,
             ease: "power4.out",
-        }, "+=0.5");
+        });
 
     }, containerRef);
 
@@ -59,55 +51,24 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef} 
-      className="mx-auto pt-20 w-full min-h-screen bg-white text-black flex flex-col justify-center pb-20 overflow-hidden"
+      className="mx-auto pt-20 w-full min-h-screen bg-white text-black flex items-center justify-center pb-20 overflow-hidden"
     >
 
-      <div className="container mx-auto px-10 2xl:px-0 max-w-[1400px] relative z-10 flex flex-col lg:flex-row gap-12 items-end">
+      <div className="container mx-auto px-10 2xl:px-0 max-w-[1400px] relative z-10 flex items-center justify-center gap-12">
         
-        {/* LEFT: MASSIVE HEADLINE */}
-        <div className="w-full lg:flex-[2] min-w-0">
-            <h1 
-                ref={titleRef}
-                className="leading-[0.85] md:pb-14 2xl:pb-8 font-black text-black tracking-tighter"
-                style={{ fontFamily: "'Slussen Expanded Black', sans-serif" }}
-            >
-                {/* Custom Split for Animation */}
-                <div className="overflow-hidden">
-                    <span className="hero-word block translate-y-[110%] opacity-0 text-[13vw] md:text-[6.5rem] 2xl:text-[7.5rem]">
-                        WE 
-                    </span>
-                    <span className="hero-word block translate-y-[110%] opacity-0 text-[13vw] md:text-[6.5rem] 2xl:text-[7.5rem]">SCALE</span>
-                </div>
-                <div className="overflow-hidden">
-                    <span className="hero-word block translate-y-[110%] opacity-0 text-[12vw] md:text-[6.5rem] 2xl:text-[7.5rem]">
-                        REVENUE.
-                    </span>
-                    <span className="hero-word  block translate-y-[110%] opacity-0 text-[5vw] md:text-[3.5rem] 2xl:text-[4.2rem] mt-2 lg:mt-1">
-                        EVERY
-                    </span>
-                    <span className="hero-word block translate-y-[110%] opacity-0 text-[5vw] md:text-[3.5rem] 2xl:text-[4.2rem] mt-2 lg:mt-1">
-                        SINGLE DAY.
-                    </span>
-                </div>  
-                <div className="hero-word block translate-y-[110%] opacity-0 text-2xl uppercase overflow-hidden mt-4">
-                    <span>No excuses. No fluff. Just results.</span>
-                </div>
-            </h1>
-        </div>
-
         {/* RIGHT: DETAILS & CTA */}
-        <div className="w-full lg:flex-1 flex flex-col gap-8 lg:pb-6">
+        <div className="w-full flex flex-col text-center items-center justify-center gap-8 lg:pb-6">
             
             {/* Description */}
-            <p className="hero-subtext opacity-0 translate-y-10 text-lg  md:text-2xl 2xl:text-3xl leading-relaxed">
-                Max ROAS creates the brand infrastructure for exponential growth. We build the revenue engine that drives your business expansion.<br/> Smart Ads. Predictable results. Long-term stability.
+            <p className="hero-subtext opacity-0 translate-y-[100%] text-lg  md:text-3xl 2xl:text-4xl leading-relaxed">
+                Max ROAS team creates the brand infrastructure for exponential growth. We build the revenue engine that drives your business expansion. We scale brands’ revenue every single day.<br/> Smart Ads. Predictable results. Long-term stability.
             </p>
 
             <div>
-                <h3 className="hero-subtext opacity-0 translate-y-10 font-bold text-lg uppercase flex items-center">
+                <h3 className="hero-subtext opacity-0 translate-y-[100%] font-bold text-lg uppercase">
                     The 30-Day Promise
                 </h3>
-                <p className="hero-subtext opacity-0 translate-y-10 text-xl">
+                <p className="hero-subtext opacity-0 translate-y-[100%] text-2xl">
                     We generate additional revenue on top of your baseline within 30 days. <br/>
                     <span className="block font-semibold mt-1">
                         If we don’t deliver, you don’t pay.
@@ -115,7 +76,7 @@ const Hero = () => {
                 </p>
             </div>
             {/* CTA Button */}
-            <div className="hero-btn opacity-0 translate-y-10 pt-4">
+            <div className="hero-btn opacity-0 translate-y-[100%] pt-4">
                 <Button text="Start Scaling Now" />
             </div>
 
