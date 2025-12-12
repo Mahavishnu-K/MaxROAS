@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../components/Button/Button.jsx";
 import ScrollArrow from "../components/Button/ScrollArrow.jsx";
+import HeroCard from "../components/Hero/Card.jsx";
+import Particles from "@/components/Background/Particles.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +31,7 @@ const Hero = () => {
         const tl = gsap.timeline();
 
         // 2. Subtext & Guarantee Reveal
-        tl.to([".hero-subtext", ".hero-btn"], {
+        tl.to([".hero-subtext", ".hero-card-container", ".hero-btn"], {
             y: 0,
             opacity: 1,
             duration: 1,
@@ -51,8 +53,26 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef} 
-      className="mx-auto pt-20 w-full min-h-screen bg-white text-black flex items-center justify-center pb-20 overflow-hidden"
+      className="relative mx-auto pt-20 w-full min-h-screen bg-white text-black flex items-center justify-center pb-20 overflow-hidden"
     >
+        {/* PARTICLES BACKGROUND */}
+        <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
+          <Particles
+            // Dark colors because background is white
+            particleColors={['#000000', '#808080', '#d4d4d4']}
+            particleCount={200} // 150 is plenty for a subtle effect, saves CPU
+            particleSpread={15} // Spread them out more
+            speed={0.15} // Slow drift
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            //particleHoverFactor={1} // Subtle mouse interaction
+            alphaParticles={true} // Soft edges
+            disableRotation={false}
+            // CRITICAL FOR PERFORMANCE:
+            // Forces standard resolution even on 4k/Retina screens to prevent lag
+            pixelRatio={1} 
+          />
+      </div>
 
       <div className="container mx-auto px-10 2xl:px-0 max-w-[1400px] relative z-10 flex items-center justify-center gap-12">
         
@@ -60,24 +80,21 @@ const Hero = () => {
         <div className="w-full flex flex-col text-center items-center justify-center gap-8 lg:pb-6">
             
             {/* Description */}
-            <p className="hero-subtext opacity-0 translate-y-[100%] text-lg  md:text-3xl 2xl:text-4xl leading-relaxed">
-                Max ROAS team creates the brand infrastructure for exponential growth. We build the revenue engine that drives your business expansion. We scale brands’ revenue every single day.<br/> Smart Ads. Predictable results. Long-term stability.
+            <p className="hero-subtext opacity-0 translate-y-[100%] text-lg md:text-4xl 2xl:text-5xl leading-relaxed">
+                We help your business generate additional revenue on top of what you’re already making; all within just 30 days. <span className="block mt-4 text-neutral-500 text-xl md:text-4xl">And If we don’t deliver, you don’t pay.</span> 
             </p>
 
-            <div>
-                <h3 className="hero-subtext opacity-0 translate-y-[100%] font-bold text-lg uppercase">
-                    The 30-Day Promise
-                </h3>
-                <p className="hero-subtext opacity-0 translate-y-[100%] text-2xl">
-                    We generate additional revenue on top of your baseline within 30 days. <br/>
-                    <span className="block font-semibold mt-1">
-                        If we don’t deliver, you don’t pay.
-                    </span>
-                </p>
+            <div className="hero-card-container opacity-0 translate-y-10 w-full flex justify-center">
+                <HeroCard />
             </div>
+
+            <p className="hero-card-container opacity-0 translate-y-[100%] text-xl md:text-2xl font-semibold tracking-wide">
+                Smart Ads. Predictable Results. Long-term Stability.
+            </p>
+
             {/* CTA Button */}
-            <div className="hero-btn opacity-0 translate-y-[100%] pt-4">
-                <Button text="Start Scaling Now" />
+            <div className="hero-btn opacity-0 translate-y-[100%] pt-1">
+                <Button text="Scale My Brand" />
             </div>
 
         </div>
