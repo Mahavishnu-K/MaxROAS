@@ -65,7 +65,7 @@ const About = () => {
             ease: "power2.out",
             scrollTrigger: {
               trigger: img,
-              start: "top 80%",
+              start: "top 70%",
             },
           }
         );
@@ -171,7 +171,7 @@ const About = () => {
         </section>
 
         {/* --- SECTION 2: LEARNINGS --- */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <section className="min-h-[600px] grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Image Left on Desktop */}
           <div className="lg:col-span-5 order-2 lg:order-1 reveal-image">
              <div className="relative overflow-hidden">
@@ -272,7 +272,7 @@ const About = () => {
         </section>
 
         {/* --- SECTION 4: PROMISE & CTA --- */}
-        <section className="flex flex-col min-h-screen items-center justify-center gap-16 py-10">
+        <section className="flex flex-col min-h-[700px] items-center justify-center gap-16 py-10">
             <div className="parallax-text text-center">
                 <h3 className="text-3xl md:text-6xl mb-4">Our Promise!</h3>
                 <p className="text-2xl md:text-5xl font-bold mb-6">Brand Growth = Our Success</p>
