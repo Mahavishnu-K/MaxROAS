@@ -40,7 +40,7 @@ const steps = [
 const WorkProcess = () => {
   return (
     <section className="py-28 min-h-screen bg-white text-black">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto max-w-full px-6">
         
         {/* Section Heading */}
         <h2 className="text-4xl md:text-6xl text-center mb-16">

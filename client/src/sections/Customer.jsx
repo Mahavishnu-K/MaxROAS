@@ -63,7 +63,7 @@ const Customer = () => {
 
     return (
         <section className="bg-white text-black min-h-screen flex items-center py-20 md:py-32 relative z-10 overflow-hidden">
-            <div className="container mx-auto px-7 max-w-7xl">
+            <div className="container mx-auto px-7 max-w-[1400px]">
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     

@@ -185,7 +185,7 @@ const Service = () => {
          <section className="mx-auto pt-20 relative z-0 bg-black min-h-screen">
             <div 
                 ref={containerRef}
-                className="container mx-auto relative z-20 overflow-hidden"
+                className="container mx-auto max-w-full relative z-20 overflow-hidden"
                 style={{ "--x": "0px", "--y": "0px", "--size": "0px" }}
             >
                 {/* LAYER 1: Standard Services (White) */}

@@ -64,7 +64,7 @@ const Special = () => {
 
     return (
         <section className="mx-auto pt-28 bg-white relative z-0 max-h-screen overflow-hidden">
-            <div className="container mx-auto relative z-20 mb-20">
+            <div className="container mx-auto max-w-full relative z-20 mb-20">
                 <div className="p-5 md:p-5 w-full">
                     <h1 className="text-6xl flex justify-center mb-4">Our Fortune Clients</h1>
                     <p className="text-xl flex justify-center text-black text-center max-w-2xl mx-auto mb-16">

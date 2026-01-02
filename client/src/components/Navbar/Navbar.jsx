@@ -39,7 +39,7 @@ const Navbar = ({ scrollToSection, refs }) => {
 
   return (
     <header className="w-full py-2 md:py-3 text-sm fixed z-40 flex flex-wrap md:justify-start md:flex-nowrap top-0 left-0">
-      <nav className="container mx-auto px-7" aria-label="Global">
+      <nav className="container mx-auto px-7 max-w-full" aria-label="Global">
         
         <div className="md:flex md:items-center md:justify-between bg-white h-[4rem] md:h-[5rem] rounded-2xl w-full px-5 md:px-3 py-2 shadow-[0_0_20px_rgba(0,0,0,0.25)]">
 
