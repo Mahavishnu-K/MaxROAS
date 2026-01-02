@@ -56,7 +56,7 @@ const Hero = () => {
       className="relative mx-auto pt-20 w-full min-h-screen bg-white text-black flex items-center justify-center pb-20 overflow-hidden"
     >
         {/* PARTICLES BACKGROUND */}
-        <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
+        <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
           <Particles
             // Dark colors because background is white
             particleColors={['#000000', '#808080', '#d4d4d4']}
@@ -81,20 +81,16 @@ const Hero = () => {
             
             {/* Description */}
             <p className="hero-subtext opacity-0 translate-y-[100%] text-lg md:text-4xl 2xl:text-5xl leading-relaxed">
-                We help your business generate additional revenue on top of what you’re already making; all within just 30 days. <span className="block mt-4 text-neutral-500 text-xl md:text-4xl">And If we don’t deliver, you don’t pay.</span> 
+                We help brands scale 2× revenue on top of what you’re already making; all within just 30 days. {/*<span className="block mt-4 text-neutral-500 text-xl md:text-4xl">And If we don’t deliver, you don’t pay.</span>*/}
             </p>
 
             <div className="hero-card-container opacity-0 translate-y-10 w-full flex justify-center">
                 <HeroCard />
             </div>
 
-            <p className="hero-card-container opacity-0 translate-y-[100%] text-xl md:text-2xl font-semibold tracking-wide">
-                Smart Ads. Predictable Results. Long-term Stability.
-            </p>
-
             {/* CTA Button */}
             <div className="hero-btn opacity-0 translate-y-[100%] pt-1">
-                <Button text="Scale My Brand" />
+                <Button text="Scale My Brand" shadowStatus='true' />
             </div>
 
         </div>

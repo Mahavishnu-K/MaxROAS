@@ -7,19 +7,19 @@ gsap.registerPlugin(ScrollTrigger);
 const Service = () => {
     const containerRef = useRef(null);
     const services = [
+        "SCALING E-COMMERCE",
         "LEAD GENERATION",
         "GROWTH HACKING",
-        "SCALING E-COMMERCE",
         "WEB DESIGN & DEVELOPMENT"
     ];
 
     const rawPhrases  = [
+        "Breaking the 'Buy' Button",
+        "Emptying the Warehouse",
         "Attracting, Not Chasing",
         "Altering Strangers Into Stalkers",
         "Legal Steroids for Business",
         "Business Cheat Codes",
-        "Breaking the 'Buy' Button",
-        "Emptying the Warehouse",
         "Love at First Scroll",
         "Love at First Pixel"
     ];

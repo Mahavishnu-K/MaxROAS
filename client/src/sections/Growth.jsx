@@ -75,10 +75,10 @@ const Growth = () => {
       };
 
       animateValue(sessionRef.current, 0, 465, "K+");
-      animateValue(campaignRef.current, 0, 500,"+");
-      animateValue(salesRef.current, 0, 1.2, " Cr+");
-      animateValue(orderRef.current, 0, 20, "K+");
-      animateValue(conversionRef.current, 0, 1.06, "%", "+");
+      animateValue(campaignRef.current, 0, 10," Cr+");
+      animateValue(salesRef.current, 0, 2.5, " Cr+");
+      animateValue(orderRef.current, 0, 1000, "+");
+      animateValue(conversionRef.current, 0, 2, "+", "x");
 
       // 3. Fade in badges
       gsap.from(".growth-badge", {
@@ -115,7 +115,7 @@ const Growth = () => {
                 {/* Metric 0: Ad Campaigns (approx width needed ~150px) */}
                 <div className="text-left min-w-[150px]">
                     <div className="flex items-center gap-2 mb-2">
-                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Ad Campaigns</span>
+                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Revenue Through Ads</span>
                     </div>
                     {/* Added 'tabular-nums' to ensure numbers don't jitter while counting */}
                     <h3 className="text-4xl text-white md:text-6xl tabular-nums">
@@ -136,7 +136,7 @@ const Growth = () => {
                 {/* Metric 2: Total Sales (Needs more space for 'Cr+') */}
                 <div className="text-left min-w-[220px]">
                     <div className="flex items-center gap-2 mb-2">
-                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Total Sales</span>
+                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Strategic Ad Spend Managed</span>
                     </div>
                     <h3 className="text-4xl text-white md:text-6xl tabular-nums">
                         <span ref={salesRef}>0</span>
@@ -146,7 +146,7 @@ const Growth = () => {
                 {/* Metric 3: Orders */}
                 <div className="text-left min-w-[150px]">
                     <div className="flex items-center gap-2 mb-2">
-                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Orders</span>                        
+                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">High-Performance Campaigns</span>                        
                     </div>
                     <h3 className="text-4xl text-white md:text-6xl tabular-nums">
                         <span ref={orderRef}>0</span>
@@ -156,7 +156,7 @@ const Growth = () => {
                  {/* Metric 4: Conv Rate */}
                  <div className="text-left min-w-[180px]">
                     <div className="flex items-center gap-2">
-                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Conv. Rate</span>
+                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Average Revenue Growth</span>
                     </div>
                     <h3 className="text-4xl text-white md:text-6xl tabular-nums">
                         <span ref={conversionRef}>0</span>

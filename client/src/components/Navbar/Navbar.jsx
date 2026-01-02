@@ -47,6 +47,7 @@ const Navbar = ({ scrollToSection, refs }) => {
             <div className="flex flex-col leading-none justify-center text-black">
               <div className="text-2xl font-normal">Max</div>
               <div className="text-3xl font-bold leading-[0.6]">ROAS</div>
+              <div className="text-[8px] mt-1 ml-[2px]">Your in-house digital team</div>
             </div>
           </div>
 
@@ -57,6 +58,8 @@ const Navbar = ({ scrollToSection, refs }) => {
               <p className="cursor-pointer hover:text-gray-700" onClick={() => scrollToSection(refs.specialRef)}>Clients</p>
               <p className="cursor-pointer hover:text-gray-700" onClick={() => scrollToSection(refs.customerRef)}>Community</p>
               <p className="cursor-pointer hover:text-gray-700" onClick={() => scrollToSection(refs.growthRef)}>Growth</p>
+              <p className="cursor-pointer hover:text-gray-700" onClick={() => scrollToSection(refs.processRef)}>Work</p>
+              <p className="cursor-pointer hover:text-gray-700" onClick={() => navigate("/about-us")}>About us</p>
             </div>
           </div>
 

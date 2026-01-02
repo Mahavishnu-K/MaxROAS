@@ -8,10 +8,12 @@ import Mouri from '../assets/Mouri.png';
 import MuchLove from '../assets/MuchLove.png';
 import Radoss from '../assets/Radoss.webp';
 import Trayee from '../assets/Trayee.png';
-import instagram from '../assets/instagram.png';
-import youtube from '../assets/youtube.png';
-import googlesites from '../assets/googlesites.png';
-import facebook from '../assets/facebook.png';
+
+import instagram from '/platform/instagram.png';
+import youtube from '/platform/youtube.png';
+import googlesites from '/platform/google.png';
+import facebook from '/platform/facebook.png';
+import shopify from '/platform/shopify.png';
 
 const Special = () => {
     // Ref for the container to scope GSAP selectors
@@ -31,6 +33,7 @@ const Special = () => {
         { name: "YouTube", src: youtube },
         { name: "Google Sites", src: googlesites },
         { name: "Facebook", src: facebook },
+        { name: "Shopify", src: shopify },
     ];
 
     useLayoutEffect(() => {
@@ -106,10 +109,10 @@ const Special = () => {
                     {/* --- END SLIDER --- */}
                     <div className="pt-10">
                         <h1 className="text-4xl flex justify-center mt-5">Platforms We Work On</h1>
-                        <div className="flex gap-10 justify-center">
+                        <div className="flex gap-10 justify-center mt-10">
                             {socialPlatforms.map((platform, index) => (
                                 <div key={index} className="mx-5 w-12 md:w-56 flex items-center justify-center">
-                                    <img src={platform.src} alt={platform.name} className="w-full h-auto transition-all duration-300" />
+                                    <img src={platform.src} alt={platform.name} className="transition-all duration-300" />
                                 </div>
                             ))}
                         </div>

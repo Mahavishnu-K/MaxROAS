@@ -9,6 +9,9 @@ import Services from '../sections/Service.jsx'
 import Special from '../sections/Special.jsx'
 import Customer from '../sections/Customer.jsx'
 import Growth from '../sections/Growth.jsx'
+import WorkProcess from '../sections/WorkProcess.jsx'
+import Comparison from '../sections/Comparison.jsx'
+
 import Navbar from '../components/Navbar/Navbar.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import TextParallax from '../components/TextParallax/TextParallax.jsx'
@@ -21,6 +24,7 @@ const Home = () => {
   const specialRef = useRef(null);
   const customerRef = useRef(null);
   const growthRef = useRef(null);
+  const processRef = useRef(null);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -48,7 +52,7 @@ const Home = () => {
     <div className="w-full overflow-hidden">
         <Navbar 
           scrollToSection={scrollToSection}
-          refs={{ heroRef, servicesRef, specialRef, customerRef, growthRef }}
+          refs={{ heroRef, servicesRef, specialRef, customerRef, growthRef, processRef }}
         />
 
         <section ref={heroRef}><Hero /></section>
@@ -57,6 +61,8 @@ const Home = () => {
         <TextParallax />
         <section ref={customerRef}><Customer /></section>
         <section ref={growthRef}><Growth /></section>
+        <section ref={processRef}><WorkProcess /></section>
+        <section ><Comparison /></section>
         <Footer />
     </div>
   )

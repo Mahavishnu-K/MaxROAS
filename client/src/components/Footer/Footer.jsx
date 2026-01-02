@@ -52,6 +52,7 @@ const Footer = () => {
     position: "relative",
     width: "100%",
     maxWidth: "1400px",
+    height: "510px",
     padding: "clamp(2rem, 5vw, 4rem)",
     background: "rgba(255, 255, 255, 0.03)",
     backdropFilter: "blur(10px)",
@@ -102,7 +103,7 @@ const Footer = () => {
   // --- Content ---
   const leftLinks = [
     { name: "Plans & Pricing", href: "/pricing" },
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/about-us" },
     { name: "Careers", href: "/careers" },
   ];
 
@@ -153,7 +154,8 @@ const Footer = () => {
             <div style={centerColumnStyle}>
                 <div className="flex flex-col leading-none justify-center text-white">
                     <div className="text-6xl font-normal">Max</div>
-                    <div className="text-8xl font-bold leading-[0.6]">ROAS</div>
+                    <div className="text-8xl font-bold leading-[0.8]">ROAS</div>
+                    <div className="text-[20px] mt-1 ml-[8px]">Your in-house digital team</div>
                 </div>
               
               <div className="social-container flex gap-3 mt-6">

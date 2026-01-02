@@ -2,24 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-const Button = ({text = "Start Scaling Now"}) => {
+const Button = ({text = "Start Scaling Now", shadowStatus = false, invert = false }) => {
   const navigate = useNavigate();
+  
+  // Determine dot color based on invert state
+  const dotColor = invert ? "#ffffff" : "#000000";
+
   return (
-    <StyledWrapper>
+    <StyledWrapper shadowStatus={shadowStatus} invert={invert}>
       <button onClick={() => navigate('/contact')} className="Btn-Container">
         <span className="text">{text}</span>
         <span className="icon-Container">
           <svg viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="1.61321" cy="1.61321" r="1.5" fill="black" />
-            <circle cx="5.73583" cy="1.61321" r="1.5" fill="black" />
-            <circle cx="5.73583" cy="5.5566" r="1.5" fill="black" />
-            <circle cx="9.85851" cy="5.5566" r="1.5" fill="black" />
-            <circle cx="9.85851" cy="9.5" r="1.5" fill="black" />
-            <circle cx="13.9811" cy="9.5" r="1.5" fill="black" />
-            <circle cx="5.73583" cy="13.4434" r="1.5" fill="black" />
-            <circle cx="9.85851" cy="13.4434" r="1.5" fill="black" />
-            <circle cx="1.61321" cy="17.3868" r="1.5" fill="black" />
-            <circle cx="5.73583" cy="17.3868" r="1.5" fill="black" />
+            <circle cx="1.61321" cy="1.61321" r="1.5" fill={dotColor} />
+            <circle cx="5.73583" cy="1.61321" r="1.5" fill={dotColor} />
+            <circle cx="5.73583" cy="5.5566" r="1.5" fill={dotColor} />
+            <circle cx="9.85851" cy="5.5566" r="1.5" fill={dotColor} />
+            <circle cx="9.85851" cy="9.5" r="1.5" fill={dotColor} />
+            <circle cx="13.9811" cy="9.5" r="1.5" fill={dotColor} />
+            <circle cx="5.73583" cy="13.4434" r="1.5" fill={dotColor} />
+            <circle cx="9.85851" cy="13.4434" r="1.5" fill={dotColor} />
+            <circle cx="1.61321" cy="17.3868" r="1.5" fill={dotColor} />
+            <circle cx="5.73583" cy="17.3868" r="1.5" fill={dotColor} />
           </svg>
         </span>
       </button>
@@ -32,55 +36,62 @@ const StyledWrapper = styled.div`
     display: flex;
     width: auto;
     height: fit-content;
-    background-color: #000000;
-    box-shadow: 0px 5px 10px #bebebe;
+    /* Logic: Invert = White BG, Default = Black BG */
+    background-color: ${({ invert }) => (invert ? "#ffffff" : "#000000")};
+    box-shadow: ${({ shadowStatus }) =>
+      shadowStatus ? "0px 5px 10px #bebebe" : "none"};
     justify-content: space-between;
     align-items: center;
     border: none;
     cursor: pointer;
+    /* Optional: Add a border if inverted so it shows up on white backgrounds */
+    border: ${({ invert }) => (invert ? "1px solid #000000" : "none")};
+  }
+  
+  .Btn-Container:hover {
+    scale: 1.05;
+    transition: 0.5s;
+    transform: 0.3s;
   }
   
   .icon-Container {
-    /* Increased from 45px to 60px */
     width: 60px;
     height: 60px;
-    background-color: #ffffff;
+    /* Logic: Invert = Black Box, Default = White Box */
+    background-color: ${({ invert }) => (invert ? "#000000" : "#ffffff")};
     display: flex;
     align-items: center;
     margin-right: 1px;
     justify-content: center;
-    border: 3px solid #1d2129;
+    /* Logic: Border matches the main background color */
+    border: 3px solid ${({ invert }) => (invert ? "#ffffff" : "#1d2129")};
     overflow: hidden;
+    /* Removed border-radius to make it a SQUARE */
+    border-radius: 0; 
   }
   
   .text {
-    /* Increased width and font size */
     width: 220px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.2em; /* Larger text */
+    /* Logic: Invert = Black Text, Default = White Text */
+    color: ${({ invert }) => (invert ? "#000000" : "#ffffff")};
+    font-size: 1.2em;
     letter-spacing: 1.2px;
-    font-weight: 600; /* Added weight for better scaling look */
-    padding: 15px 0; /* Added padding for height */
+    font-weight: 600;
+    padding: 15px 0;
   }
   
   .icon-Container svg {
-    /* Set specific larger size for the arrow */
     width: 24px; 
     height: auto; 
-    /* IMPORTANT: Removed transition-duration to prevent glitching */
-  }
-
-  .Btn-Container:hover .icon-Container svg {
     animation: arrow 1s linear infinite;
   }
   
   @keyframes arrow {
     0% {
-      /* Increased distance because the box is wider now */
       transform: translateX(-180%);
     }
     100% {
