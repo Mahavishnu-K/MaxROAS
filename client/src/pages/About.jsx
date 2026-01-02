@@ -109,7 +109,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 max-w-[1400px] flex justify-center items-center flex-col gap-20">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl flex justify-center items-center flex-col gap-20">
 
         {/* --- SECTION 1: FOUNDERS --- */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
