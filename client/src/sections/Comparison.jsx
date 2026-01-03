@@ -17,12 +17,12 @@ const Comparison = () => {
   ];
 
   return (
-    <section className="pt-28 min-h-screen bg-black text-white">
+    <section className="py-24 2xl:py-28 min-h-screen bg-black text-white">
       <div className="container mx-auto px-6 max-w-6xl">
         
         {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-6xl flex justify-center mb-4">
+        <div className="text-center mb-10 2xl:mb-14">
+          <h2 className="text-[45px] 2xl:text-6xl flex justify-center mb-1 2xl:mb-2">
             Why Max ROAS Stands Apart
           </h2>
           <p className="text-gray-500 text-lg">
@@ -31,12 +31,12 @@ const Comparison = () => {
         </div>
 
         {/* Comparison Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 2xl:gap-16 justify-items-center">
           
           {/* --- CARD 1: MAX ROAS (The Winner) --- */}
-          <div className="bg-white text-black rounded-lg p-8 md:p-10 shadow-2xl relative overflow-hidden transform md:scale-110 z-10">
+          <div className="bg-white text-black rounded-lg w-full mx-auto max-w-[480px] 2xl:max-w-none 2xl:w-full p-8 2xl:p-10 relative overflow-hidden transform md:scale-110 z-10">
             {/* Header */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-6 2xl:mb-10">
               <h3 className="text-3xl font-semibold mb-2">Max ROAS</h3>
               <div className="h-[0.5px] w-full bg-black mx-auto rounded-full"></div>
             </div>
@@ -61,10 +61,10 @@ const Comparison = () => {
           </div>
 
           {/* --- CARD 2: AGENCIES --- */}
-          <div className="rounded-lg p-8 md:p-10 border border-gray-800 shadow-gray-800 shadow-sm relative z-0">
+          <div className="rounded-lg p-8 2xl:p-10 w-full mx-auto max-w-[480px] 2xl:max-w-none 2xl:w-full border border-gray-800 shadow-gray-800 shadow-sm relative z-0">
              {/* Header */}
-             <div className="text-center mb-10">
-              <h3 className="text-2xl mb-2 opacity-60">Agencies or Freelancers/Freelance Portals</h3>
+             <div className="text-center mb-6 2xl:mb-10">
+              <h3 className="text-2xl mb-2 opacity-90">Agencies or Freelancers/Freelance Portals</h3>
               <div className="h-[0.5px] w-full bg-white mx-auto rounded-full opacity-20"></div>
             </div>
 
@@ -79,7 +79,7 @@ const Comparison = () => {
                       className="w-full h-full object-contain opacity-70"
                     />
                   </div>
-                  <span className="text-lg font-medium leading-tight opacity-60">
+                  <span className="text-lg font-medium leading-tight opacity-90">
                     {item.other}
                   </span>
                 </li>

@@ -39,11 +39,11 @@ const steps = [
 
 const WorkProcess = () => {
   return (
-    <section className="py-28 min-h-screen bg-white text-black">
+    <section className="py-24 2xl:py-28 min-h-screen bg-white text-black">
       <div className="container mx-auto max-w-full px-6">
         
         {/* Section Heading */}
-        <h2 className="text-4xl md:text-6xl text-center mb-16">
+        <h2 className="text-[46px] 2xl:text-6xl text-center mb-6 2xl:mb-16">
           How We Work
         </h2>
 
@@ -53,7 +53,7 @@ const WorkProcess = () => {
             <div key={index} className="flex flex-col items-center text-center relative group">
               
               {/* Icon Container */}
-              <div className="md:w-auto md:h-32 mb-6 relative">
+              <div className="md:w-auto h-28 2xl:h-32 mb-2 2xl:mb-6 relative">
                 <img
                   src={step.img}
                   alt={step.title}

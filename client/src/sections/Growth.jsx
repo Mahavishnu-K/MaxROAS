@@ -11,7 +11,6 @@ const Growth = () => {
   const dotRef = useRef(null);
   
   // Refs for number counting
-  const sessionRef = useRef(null);
   const campaignRef = useRef(null);
   const salesRef = useRef(null);
   const orderRef = useRef(null);
@@ -74,7 +73,6 @@ const Growth = () => {
         );
       };
 
-      animateValue(sessionRef.current, 0, 465, "K+");
       animateValue(campaignRef.current, 0, 10," Cr+");
       animateValue(salesRef.current, 0, 2.5, " Cr+");
       animateValue(orderRef.current, 0, 1000, "+");
@@ -97,17 +95,17 @@ const Growth = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="pt-24 px-15 lg:px-4 min-h-screen flex flex-col justify-center bg-black">
+    <section ref={containerRef} className="pt-24 md:px-16 2xl:px-4 min-h-screen flex flex-col justify-center bg-black">
       <div className="container mx-auto max-w-[1400px]">
         
         {/* --- Header / Title --- */}
-        <h2 className="text-4xl text-white md:text-6xl font-bold text-left mb-4">
+        <h2 className="text-white text-5xl 2xl:text-6xl font-bold text-left mb-4">
             Real Results.
             <span className="opacity-50 font-light"> Real Growth.</span>
         </h2>
 
         {/* --- Dashboard Card --- */}
-        <div className="p-0 md:p-6 relative overflow-hidden">
+        <div className="p-2 2xl:p-6 relative overflow-hidden">
             
             {/* Top Metrics Grid */}
             <div className="flex justify-between mb-12 px-4 md:px-0 flex-wrap gap-8">
@@ -118,18 +116,8 @@ const Growth = () => {
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Revenue Through Ads</span>
                     </div>
                     {/* Added 'tabular-nums' to ensure numbers don't jitter while counting */}
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-5xl text-white 2xl:text-6xl tabular-nums">
                         <span ref={campaignRef}>0</span>
-                    </h3>
-                </div>
-                
-                {/* Metric 1: Sessions */}
-                <div className="text-left min-w-[180px]">
-                    <div className="flex items-center gap-2 mb-2">
-                        <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Sessions</span>
-                    </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
-                        <span ref={sessionRef}>0</span>
                     </h3>
                 </div>
 
@@ -138,7 +126,7 @@ const Growth = () => {
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Strategic Ad Spend Managed</span>
                     </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-5xl text-white 2xl:text-6xl tabular-nums">
                         <span ref={salesRef}>0</span>
                     </h3>
                 </div>
@@ -148,7 +136,7 @@ const Growth = () => {
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">High-Performance Campaigns</span>                        
                     </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-5xl text-white 2xl:text-6xl tabular-nums">
                         <span ref={orderRef}>0</span>
                     </h3>
                 </div>
@@ -158,7 +146,7 @@ const Growth = () => {
                     <div className="flex items-center gap-2">
                         <span className="text-gray-500 font-medium text-sm uppercase tracking-wide">Average Revenue Growth</span>
                     </div>
-                    <h3 className="text-4xl text-white md:text-6xl tabular-nums">
+                    <h3 className="text-5xl text-white 2xl:text-6xl tabular-nums">
                         <span ref={conversionRef}>0</span>
                     </h3>
                 </div>
@@ -166,10 +154,10 @@ const Growth = () => {
             </div>
 
             {/* --- The Graph --- */}
-            <div className="relative w-full h-[350px] md:h-[500px] mt-10 -mx-4 md:mx-0">
+            <div className="relative w-full h-[450px] 2xl:h-[500px] mt-10 -mx-4 md:mx-0">
                 <svg 
                     viewBox="0 0 1000 400" 
-                    className="w-full h-full overflow-visible"
+                    className="w-full h-full p-5 2xl:p-0 overflow-visible"
                     preserveAspectRatio="none"
                 >
                     <defs>

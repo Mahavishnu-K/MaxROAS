@@ -45,14 +45,14 @@ const Navbar = ({ scrollToSection, refs }) => {
 
           <div className="flex ml-5 pb-1 items-center justify-between h-full flex-shrink-0">
             <div className="flex flex-col leading-none justify-center text-black">
-              <div className="text-2xl font-normal">Max</div>
-              <div className="text-3xl font-bold leading-[0.6]">ROAS</div>
+              <div className="text-xl xl:text-2xl font-normal">Max</div>
+              <div className="text-2xl xl:text-3xl font-bold leading-[0.7] xl:leading-[0.6]">ROAS</div>
               <div className="text-[8px] mt-1 ml-[2px]">Your in-house digital team</div>
             </div>
           </div>
 
           <div className="flex-col gap-0 justify-center items-center md:flex-row md:items-center hidden md:flex w-full text-base text-black">
-            <div className="flex gap-12 text-lg items-center">
+            <div className="flex gap-8 xl:gap-12 text-[15px] 2xl:text-lg items-center">
               <p className="cursor-pointer hover:text-gray-700" onClick={() => scrollToSection(refs.heroRef)}>Who are we</p>
               <p className="cursor-pointer hover:text-gray-700" onClick={() => scrollToSection(refs.servicesRef) }>What we do</p>
               <p className="cursor-pointer hover:text-gray-700" onClick={() => scrollToSection(refs.specialRef)}>Clients</p>
@@ -69,14 +69,14 @@ const Navbar = ({ scrollToSection, refs }) => {
               onMouseEnter={onEnter}
               onMouseLeave={onLeave}
               onClick={() => navigate("/contact")}
-              className="border-none flex items-center gap-5 bg-black text-white px-5 py-3 rounded-xl transition whitespace-nowrap relative overflow-hidden"
+              className="border-none flex items-center gap-3 2xl:gap-5 bg-black text-white px-4 py-2 2xl:px-5 2xl:py-3 rounded-xl transition whitespace-nowrap relative overflow-hidden"
             >
-              <p className="text-[22px]">CONTACT</p>
+              <p className="text-lg 2xl:text-[22px]">CONTACT</p>
 
               <div className="relative w-[35px] h-[35px]">
                 <MdOutlineArrowForward
                   ref={forwardRef}
-                  className="absolute text-[35px]"
+                  className="absolute mt-1 2xl:mt-0 text-[28px] 2xl:text-[35px]"
                 />
               </div>
             </button>

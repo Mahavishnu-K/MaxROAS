@@ -150,7 +150,7 @@ const Service = () => {
                             ${colorClass === 'text-black' ? 'bg-black opacity-30' : 'bg-white opacity-30'}
                         `}></div>
                         {/* Text Wrapper with Overflow Hidden for the "Rise Up" effect */}
-                        <div className="min-h-[120px] lg:min-h-[120px] flex items-center flex-wrap content-center overflow-hidden">
+                        <div className="min-h-[110px] 2xl:min-h-[120px] flex items-center flex-wrap content-center overflow-hidden">
                             {item.split(" ").map((word, i) => (
                                 <span key={i} className="relative overflow-hidden inline-flex">
                                     <p 
@@ -182,7 +182,7 @@ const Service = () => {
     );
 
     return (
-         <section className="mx-auto pt-20 relative z-0 bg-black min-h-screen">
+         <section className="mx-auto pt-14 2xl:pt-20 relative z-0 bg-black min-h-screen">
             <div 
                 ref={containerRef}
                 className="container mx-auto max-w-full relative z-20 overflow-hidden"

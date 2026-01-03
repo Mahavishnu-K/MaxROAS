@@ -81,7 +81,7 @@ const Hero = () => {
             
             {/* Description */}
             <p className="hero-subtext opacity-0 translate-y-[100%] text-lg md:text-4xl 2xl:text-5xl leading-relaxed">
-                We help brands scale 2× revenue on top of what you’re already making; all within just 30 days. {/*<span className="block mt-4 text-neutral-500 text-xl md:text-4xl">And If we don’t deliver, you don’t pay.</span>*/}
+                We help brands scale 2× revenue on top of what you’re <br /> already making; all within just 30 days. {/*<span className="block mt-4 text-neutral-500 text-xl md:text-4xl">And If we don’t deliver, you don’t pay.</span>*/}
             </p>
 
             <div className="hero-card-container opacity-0 translate-y-10 w-full flex justify-center">
