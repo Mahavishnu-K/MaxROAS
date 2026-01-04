@@ -23,8 +23,8 @@ const Contact = () => {
 
           <div className="mb-10 flex flex-col gap-5">
             <div>
-              <p className="text-2xl font-medium">Contact</p>
-              <p>+91 81224 07759</p> 
+              <p className="text-2xl font-medium mb-2">Contact</p>
+              <a target="_blank" href="https://wa.me/+918122497759"><p className="border-black border-b-2 w-fit leading-[15px]">+91 81224 07759</p></a>
             </div>
             <div>
               <p className="text-2xl font-medium">Mail</p>
