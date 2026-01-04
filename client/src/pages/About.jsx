@@ -100,7 +100,7 @@ const About = () => {
                 }}
             ></div>
         </div>
-
+ 
       {/* Page Title */}
       <div className="flex justify-center mb-20">
         <div className="relative">
@@ -116,7 +116,7 @@ const About = () => {
           <div className="lg:col-span-7 flex flex-col gap-6">
             <h2 className="text-3xl md:text-4xl leading-tight overflow-hidden">
               <span className="drop-cap text-7xl md:text-[85px] text-[#ffffff] mr-1 float-left">B</span>
-              <span className="hero-subtext inline-block opacity-0 translate-y-[100%]">uilt by Marketers. <br/> Driven by Results.</span>
+              <span className="hero-subtext inline-block opacity-0 translate-y-[100%]">uilt by marketers, <br/> driven by results.</span>
             </h2>
             
             <div className="hero-subtext opacity-0 translate-y-[50%] space-y-6 text-gray-300 text-xl leading-relaxed">
@@ -141,7 +141,7 @@ const About = () => {
                 <img 
                     src="/about/About1.png" 
                     alt="Founders Kokila and Avinash" 
-                    className="w-full h-auto object-cover grayscale hover:grayscale-0 cursor-pointer transition-all duration-700"
+                    className="w-full h-auto object-cover cursor-pointer transition-all duration-700"
                 />
              </div>
           </div>
@@ -178,7 +178,7 @@ const About = () => {
                 <img 
                     src="/about/About2.png" 
                     alt="Strategic planning" 
-                    className="w-full h-auto object-cover grayscale hover:grayscale-0 cursor-pointer transition-all duration-700"
+                    className="w-full h-auto object-cover cursor-pointer transition-all duration-700"
                 />
                 {/* 3+ Years Badge */}
                 <div className="absolute top-6 left-6 bg-[#ffffff] text-black font-bold px-6 py-2 rounded-full shadow-lg text-lg">
@@ -190,7 +190,7 @@ const About = () => {
           <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6">
             <h2 className="text-3xl md:text-4xl leading-tight overflow-hidden">
               <span className="drop-cap text-7xl md:text-[85px] text-[#ffffff] mr-1 float-left">O</span>
-              <span className="drop-cap inline-block">ur Learnings Before <br/> Launching Max ROAS</span>
+              <span className="drop-cap inline-block">ur learnings before <br/> launching Max ROAS</span>
             </h2>
 
             <div className="parallax-text text-gray-300 text-lg leading-relaxed space-y-6">
@@ -225,7 +225,7 @@ const About = () => {
             <div className="lg:col-span-7 flex flex-col gap-6">
                 <h2 className="text-3xl md:text-4xl leading-tight overflow-hidden">
                     <span className="drop-cap text-7xl md:text-[85px] text-[#ffffff] mr-1 float-left">W</span>
-                    <span className="drop-cap inline-block">hat Makes Max ROAS <br/> Different</span>
+                    <span className="drop-cap inline-block">hat makes Max ROAS <br/> different</span>
                 </h2>
                 
                 <p className="parallax-text text-gray-300 text-lg">

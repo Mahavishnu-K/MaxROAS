@@ -9,39 +9,54 @@ const Scale = () => {
   const textRef = useRef(null);
   
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      
+    let ctx = gsap.context(() => {
       const textElement = textRef.current;
-      
-      // 1. TEXT SCROLL ANIMATION (Existing logic)
-      const getScrollAmount = () => {
-        let textWidth = textElement.scrollWidth;
-        let windowWidth = window.innerWidth;
-        return -(textWidth - windowWidth);
-      };
 
+      // The animation
       gsap.to(textElement, {
-        x: getScrollAmount,
+        // FUNCTIONAL VALUE: This is key. 
+        // It tells GSAP: "Run this math function every time you refresh"
+        x: () => {
+            // Safety check
+            if (!textElement) return 0;
+            // Calculate distance: -(Text Width - Screen Width)
+            // Adding a small buffer (50px) ensures the last letter clears the screen edge
+            return -(textElement.scrollWidth - window.innerWidth + 50);
+        },
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=3000",
+          end: "+=3000", 
           pin: true,
           scrub: 1,
-          invalidateOnRefresh: true,
+          // IMPORTANT: This forces the functional 'x' value to re-run on resize/refresh
+          invalidateOnRefresh: true, 
         }
       });
-
     }, containerRef);
 
-    return () => ctx.revert();
+    // FIX FOR FONT LOADING / NAVIGATION ISSUES:
+    // 1. Force a refresh after a small delay (handles React router transitions)
+    const timer = setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 500);
+
+    // 2. Force a refresh specifically when fonts finish loading
+    // This fixes the issue where the width is calculated before the custom font is applied
+    document.fonts.ready.then(() => {
+        ScrollTrigger.refresh();
+    });
+
+    return () => {
+        ctx.revert();
+        clearTimeout(timer);
+    };
   }, []);
 
   return (
     <section 
       ref={containerRef} 
-      // Added 'perspective-[1000px]' to enable 3D depth perception
       className="relative h-screen w-full bg-black overflow-hidden flex items-center perspective-[1000px]"
     >
       {/* Background Grid Pattern */}
@@ -54,7 +69,6 @@ const Scale = () => {
             }}
         ></div>
       </div>
-
 
       {/* The Big Sliding Text */}
       <div className="relative z-10 w-full pointer-events-none">

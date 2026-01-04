@@ -52,9 +52,7 @@ const ContactPage = () => {
       />
       
       {/* Add padding-top to account for fixed Navbar */}
-      <div className="pt-24"> 
         <Contact />
-      </div>
         <Scale />
       <Footer />
     </div>

@@ -11,6 +11,8 @@ import Customer from '../sections/Customer.jsx'
 import Growth from '../sections/Growth.jsx'
 import WorkProcess from '../sections/WorkProcess.jsx'
 import Comparison from '../sections/Comparison.jsx'
+import NotJustAds from '../sections/NotJustAds.jsx'
+import Convince from '../sections/Convince.jsx'
 
 import Navbar from '../components/Navbar/Navbar.jsx'
 import Footer from '../components/Footer/Footer.jsx'
@@ -57,12 +59,14 @@ const Home = () => {
 
         <section ref={heroRef}><Hero /></section>
         <section ref={servicesRef}><Services /></section>
+        <section><NotJustAds /></section>
         <section ref={specialRef}><Special /></section>
         <TextParallax />
         <section ref={customerRef}><Customer /></section>
         <section ref={growthRef}><Growth /></section>
         <section ref={processRef}><WorkProcess /></section>
         <section ><Comparison /></section>
+        <section><Convince /></section>
         <Footer />
     </div>
   )

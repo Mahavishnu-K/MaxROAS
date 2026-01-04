@@ -1,56 +1,77 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Data Array mapping titles to your specific filenames
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Data Array
 const steps = [
-  {
-    title: "Discovery Call",
-    img: "/work/Discovery call.png",
-  },
-  {
-    title: "Market & Brand Analysis",
-    img: "/work/Market analysis.png",
-  },
-  {
-    title: "30-Day ROAS Plan",
-    img: "/work/ROAS plan.png",
-  },
-  {
-    title: "No Upfront Payment",
-    img: "/work/No upfront.png",
-  },
-  {
-    title: "Run Ads for 30 Days",
-    img: "/work/Run Ads.png",
-  },
-  {
-    title: "Guaranteed ROAS Delivery",
-    img: "/work/Delivery.png",
-  },
-  {
-    title: "Pay Only If We Deliver",
-    img: "/work/Pay.png",
-    hasArrow: true, // Special flag for the arrow connector
-  },
-  {
-    title: "No Results? No Payment",
-    img: "/work/Pay Result.png",
-  },
+  { title: "Discovery Call", img: "/work/Discovery call.png" },
+  { title: "Market & Brand Analysis", img: "/work/Market analysis.png" },
+  { title: "30-Day ROAS Plan", img: "/work/ROAS plan.png" },
+  { title: "No Upfront Payment", img: "/work/No upfront.png" },
+  { title: "Run Ads for 30 Days", img: "/work/Run Ads.png" },
+  { title: "Guaranteed ROAS Delivery", img: "/work/Delivery.png" },
+  { title: "Pay Only If We Deliver", img: "/work/Pay.png", hasArrow: true },
+  { title: "No Results? No Payment", img: "/work/Pay Result.png" },
 ];
 
 const WorkProcess = () => {
+  const containerRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      
+      // Select the heading and the grid items
+      const heading = ".work-heading";
+      const items = ".work-step-item";
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 40%", 
+          once: true, 
+        }
+      });
+
+      // 1. Reveal Heading
+      tl.from(heading, {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      // 2. Staggered Reveal of Process Steps
+      tl.from(items, {
+        y: 50,          // Slide up from 50px below
+        opacity: 0,     // Fade in from 0
+        scale: 0.9,     // Slight zoom in effect
+        duration: 0.6,
+        stagger: 0.4,   // 0.1s delay between each item (Creates the 'wave')
+        ease: "back.out(1.7)" // Adds a subtle 'pop' overshoot at the end
+      }, "-=0.4"); // Start slightly before heading finishes
+
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="py-24 2xl:py-28 min-h-screen bg-white text-black">
+    <section ref={containerRef} className="py-24 2xl:py-28 min-h-screen bg-white text-black">
       <div className="container mx-auto max-w-full px-6">
         
         {/* Section Heading */}
-        <h2 className="text-[46px] 2xl:text-6xl text-center mb-6 2xl:mb-16">
+        <h2 className="work-heading text-[46px] 2xl:text-6xl text-center mb-6 2xl:mb-16">
           How We Work
         </h2>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8 max-w-7xl mx-auto">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center relative group">
+            // Added 'work-step-item' class for GSAP targeting
+            <div key={index} className="work-step-item flex flex-col items-center text-center relative group">
               
               {/* Icon Container */}
               <div className="md:w-auto h-28 2xl:h-32 mb-2 2xl:mb-6 relative">
@@ -66,7 +87,7 @@ const WorkProcess = () => {
                 {step.title}
               </h3>
 
-              {/* Special Arrow Connector (Only for the 7th item) */}
+              {/* Special Arrow Connector */}
               {step.hasArrow && (
                 <div className="hidden lg:flex absolute -right-24 top-8 flex-col items-center justify-center w-40">
                   <span className="text-[10px] md:text-xs font-semibold mb-1 text-gray-600 whitespace-nowrap">

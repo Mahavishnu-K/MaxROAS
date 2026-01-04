@@ -90,9 +90,9 @@ const Comparison = () => {
         </div>
 
         {/* Call to Action Button */}
-        <div className="flex justify-center mt-16">
+        {/* <div className="flex justify-center mt-16">
             <Button text="Book a Call" invert='true'/>
-        </div>
+        </div> */}
 
       </div>
     </section>
