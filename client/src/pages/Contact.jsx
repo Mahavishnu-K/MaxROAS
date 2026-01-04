@@ -17,16 +17,28 @@ const Contact = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl max-w-md leading-relaxed mb-12">
-            Reach out for inquiries, collaborations, or just to say hello. We're eager to connect!
+          <p className="text-lg md:text-xl max-w-md leading-relaxed mb-6">
+            Connect with us today and unlock your brand potential.<br /> Inquiries, collaborations, or just to say hello. We're eager to connect!
           </p>
 
+          <div className="mb-10 flex flex-col gap-5">
+            <div>
+              <p className="text-2xl font-medium">Contact</p>
+              <p>+91 81224 07759</p> 
+            </div>
+            <div>
+              <p className="text-2xl font-medium">Mail</p>
+              <p>maxroasindia@gmail.com</p>
+            </div>
+          </div>
           {/* Social Links */}
-          <div className="flex flex-col gap-8">
+
+          <p className="text-2xl font-medium mb-3">Socials</p>
+          <div className="flex flex-row gap-8">
             
             {/* Instagram */}
             <a href="#" className="flex items-center gap-6 group w-fit">
-              <div className="shadow-sm transition-transform duration-300 group-hover:scale-110">
+              <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
                     className="!p-0 w-14 h-14 bg-white rounded-full border border-gray-200 flex items-center justify-center"
@@ -38,14 +50,14 @@ const Contact = () => {
                     </div>
                 </Rounded>
               </div>
-              <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
+              {/* <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
                 Instagram
-              </span>
+              </span> */}
             </a>
 
             {/* Twitter */}
             <a href="#" className="flex items-center gap-6 group w-fit">
-              <div className="shadow-sm transition-transform duration-300 group-hover:scale-110">
+              <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
                     className="!p-0 w-14 h-14 bg-white rounded-full border border-gray-200 flex items-center justify-center"
@@ -57,14 +69,14 @@ const Contact = () => {
                     </div>
                 </Rounded>
               </div>
-              <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
+              {/* <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
                 Twitter
-              </span>
+              </span> */}
             </a>
 
             {/* LinkedIn */}
             <a href="#" className="flex items-center gap-6 group w-fit">
-              <div className="shadow-sm transition-transform duration-300 group-hover:scale-110">
+              <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
                     className="!p-0 w-14 h-14 bg-white rounded-full border border-gray-200 flex items-center justify-center"
@@ -76,14 +88,14 @@ const Contact = () => {
                     </div>
                 </Rounded>
               </div>
-              <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
+              {/* <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
                 LinkedIn
-              </span>
+              </span> */}
             </a>
 
             {/* Facebook */}
             <a href="#" className="flex items-center gap-6 group w-fit">
-              <div className="shadow-sm transition-transform duration-300 group-hover:scale-110">
+              <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
                     className="!p-0 w-14 h-14 bg-white rounded-full border border-gray-200 flex items-center justify-center"
@@ -95,9 +107,9 @@ const Contact = () => {
                     </div>
                 </Rounded>
               </div>
-              <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
+              {/* <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
                 Facebook
-              </span>
+              </span> */}
             </a>
 
           </div>
@@ -161,7 +173,7 @@ const Contact = () => {
             {/* Submit Button */}
             <button 
               type="button"
-              className="w-full bg-black text-white font-medium py-4 rounded-full hover:bg-gray-900 transition-colors duration-300 mt-4 tracking-wide"
+              className="w-full bg-black text-white uppercase font-medium py-4 rounded-full transition-colors duration-300 mt-4 tracking-wide"
             >
               Send Inquiry
             </button>
