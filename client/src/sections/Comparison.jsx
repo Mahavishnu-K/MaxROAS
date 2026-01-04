@@ -18,7 +18,7 @@ const Comparison = () => {
 
   return (
     <section className="py-24 2xl:py-28 min-h-screen bg-black text-white">
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-24 2xl:px-6 max-w-6xl">
         
         {/* Header */}
         <div className="text-center mb-10 2xl:mb-14">
@@ -34,7 +34,7 @@ const Comparison = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 2xl:gap-16 justify-items-center">
           
           {/* --- CARD 1: MAX ROAS (The Winner) --- */}
-          <div className="bg-white text-black rounded-lg w-full mx-auto max-w-[480px] 2xl:max-w-none 2xl:w-full p-8 2xl:p-10 relative overflow-hidden transform md:scale-110 z-10">
+          <div className="bg-white text-black rounded-lg w-full mx-auto max-w-[430px] 2xl:max-w-none 2xl:w-full p-8 2xl:p-10 relative overflow-hidden transform md:scale-110 z-10">
             {/* Header */}
             <div className="text-center mb-6 2xl:mb-10">
               <h3 className="text-3xl font-semibold mb-2">Max ROAS</h3>
@@ -61,7 +61,7 @@ const Comparison = () => {
           </div>
 
           {/* --- CARD 2: AGENCIES --- */}
-          <div className="rounded-lg p-8 2xl:p-10 w-full mx-auto max-w-[480px] 2xl:max-w-none 2xl:w-full border border-gray-800 shadow-gray-800 shadow-sm relative z-0">
+          <div className="rounded-lg p-8 2xl:p-10 w-full mx-auto max-w-[430px] 2xl:max-w-none 2xl:w-full border border-gray-800 shadow-gray-800 shadow-sm relative z-0">
              {/* Header */}
              <div className="text-center mb-6 2xl:mb-10">
               <h3 className="text-2xl mb-2 opacity-90">Agencies or Freelancers/Freelance Portals</h3>
