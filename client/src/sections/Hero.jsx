@@ -97,7 +97,7 @@ const Hero = () => {
       </div>
 
       {/* FOOTER OF HERO (Social Proof / Decor) */}
-      <div ref={footerRef} className="absolute bottom-5 left-0 w-full px-3 md:px-8 flex justify-between items-end pointer-events-none">
+      <div ref={footerRef} className="absolute bottom-14 md:bottom-5 left-0 w-full px-3 md:px-8 flex justify-between items-end pointer-events-none">
         {/* Left: Copyright */}
         <h2 className="scroll-arrow translate-y-10 text-xs md:text-base font-semibold uppercase">
             <span>©</span> {new Date().getFullYear()} <br className="md:hidden" /> MAX ROAS
