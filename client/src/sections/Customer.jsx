@@ -63,18 +63,18 @@ const Customer = () => {
 
     return (
         <section className="bg-white text-black min-h-screen flex items-center py-24 2xl:py-32 relative z-10 overflow-hidden">
-            <div className="container mx-auto px-24 2xl:px-7 max-w-[1400px]">
+            <div className="container mx-auto px-12 md:px-24 2xl:px-7 max-w-[1400px]">
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 2xl:gap-24 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 2xl:gap-24 items-start">
                     
                     {/* LEFT SIDE: Static Header & Navigation */}
-                    <div className="flex flex-col justify-between h-[400px] space-y-8 lg:space-y-0">
+                    <div className="flex flex-col justify-start md:justify-between md:h-[400px] md:space-y-8 lg:space-y-0">
                         <div>
-                            <h2 className="text-6xl 2xl:text-7xl font-bold leading-tight tracking-tight mb-6">
+                            <h2 className="text-4xl md:text-6xl 2xl:text-7xl font-bold leading-tight tracking-tight mb-2 md:mb-6">
                                 From our <br />
                                 <span className="opacity-100">community.</span>
                             </h2>
-                            <p className="text-lg md:text-xl text-gray-600 max-w-md">
+                            <p className="text-base md:text-xl text-gray-600 max-w-md">
                                 Here’s what our partners had to say about their growth journey with MaxROAS.
                             </p>
                         </div>
@@ -108,15 +108,15 @@ const Customer = () => {
                     </div>
 
                     {/* RIGHT SIDE: Dynamic Content */}
-                    <div className="relative flex flex-col justify-center max-h-[400px]">
+                    <div className="relative flex flex-col justify-center max-h-[400px] h-full">
                         {/* Quote Icon */}
-                        <div ref={quoteRef} className="text-gray-500 text-7xl 2xl:text-8xl font-serif leading-none mb-4 2xl:mb-6">
+                        <div ref={quoteRef} className="text-gray-500 text-5xl md:text-7xl 2xl:text-8xl font-serif leading-none md:mb-4 2xl:mb-6">
                             “
                         </div>
 
                         <div ref={contentRef}>
                             {/* Testimonial Text */}
-                            <p className="text-3xl 2xl:text-4xl font-medium leading-snug mb-10 text-gray-900">
+                            <p className="text-lg md:text-3xl 2xl:text-4xl font-medium leading-snug mb-10 text-gray-900">
                                 {testimonials[activeIndex].text}
                                 <span className="text-gray-500">”</span>
                             </p>

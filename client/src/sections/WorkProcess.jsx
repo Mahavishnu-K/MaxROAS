@@ -60,21 +60,21 @@ const WorkProcess = () => {
 
   return (
     <section ref={containerRef} className="py-24 2xl:py-28 min-h-screen bg-white text-black">
-      <div className="container mx-auto max-w-full px-6">
+      <div className="container mx-auto max-w-full px-6  [@media(max-height:600px)]:px-14">
         
         {/* Section Heading */}
-        <h2 className="work-heading text-[46px] 2xl:text-6xl text-center mb-6 2xl:mb-16">
+        <h2 className="work-heading text-3xl md:text-[46px] 2xl:text-6xl [@media(max-height:600px)]:text-4xl text-center mb-6 2xl:mb-16">
           How We Work
         </h2>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-16 gap-x-8 max-w-7xl mx-auto">
           {steps.map((step, index) => (
             // Added 'work-step-item' class for GSAP targeting
             <div key={index} className="work-step-item flex flex-col items-center text-center relative group">
               
               {/* Icon Container */}
-              <div className="md:w-auto h-28 2xl:h-32 mb-2 2xl:mb-6 relative">
+              <div className="md:w-auto h-20 md:h-28 2xl:h-32 [@media(max-height:600px)]:h-24 mb-2 2xl:mb-6 relative">
                 <img
                   src={step.img}
                   alt={step.title}
@@ -83,7 +83,7 @@ const WorkProcess = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg md:text-xl font-medium max-w-[200px] leading-tight">
+              <h3 className="text-sm md:text-lg laptop:text-xl [@media(max-height:600px)]:text-lg font-medium max-w-[200px] leading-tight">
                 {step.title}
               </h3>
 

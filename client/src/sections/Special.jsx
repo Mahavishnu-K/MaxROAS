@@ -63,10 +63,10 @@ const Special = () => {
     }, []);
 
     return (
-        <section className="mx-auto pt-24 bg-white relative z-0 max-h-screen overflow-hidden">
+        <section className="mx-auto pt-24 bg-white relative z-0 max-h-screen flex flex-col justify-center overflow-hidden">
             <div className="container mx-auto max-w-full relative z-20 pb-20">
                 <div className="p-5 md:p-5 w-full">
-                    <h1 className="md:text-5xl 2xl:text-6xl flex justify-center mb-4">Our Fortune Clients</h1>
+                    <h1 className="text-4xl md:text-5xl 2xl:text-6xl flex items-center text-center justify-center mb-4">Our Fortune Clients</h1>
                     <p className="text-xl flex justify-center text-black text-center max-w-2xl mx-auto mb-10 2xl:mb-16">
                         We are fortunate to work with the below brands for a long time and learning a lot of experience and insights!
                     </p>
@@ -107,7 +107,7 @@ const Special = () => {
                         </div>
                     </div>
                     {/* --- END SLIDER --- */}
-                    <div className="pt-8 2xl:pt-10">
+                    {/* <div className="pt-8 2xl:pt-10">
                         <h1 className="text-4xl flex justify-center mt-5">Platforms We Work On</h1>
                         <div className="flex gap-10 justify-center mt-6 2xl:mt-10">
                             {socialPlatforms.map((platform, index) => (
@@ -116,7 +116,7 @@ const Special = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

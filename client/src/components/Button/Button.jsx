@@ -98,6 +98,34 @@ const StyledWrapper = styled.div`
       transform: translateX(180%);
     }
   }
+
+  @media (max-width: 768px) {
+    .text {
+      width: 150px;
+      font-size: 0.8em;
+    }
+    .icon-Container svg {
+      width: 18px; 
+    }
+    .icon-Container {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media(max-height:600px) {
+    .text {
+      width: 180px;
+      font-size: 1em;
+    }
+    .icon-Container svg {
+      width: 22px; 
+    }
+    .icon-Container {
+      width: 56px;
+      height: 56px;
+    }
+  }
 `;
 
 export default Button;

@@ -12,7 +12,7 @@ const NotJustAds = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-white flex flex-col items-center justify-center py-24 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-white flex flex-col items-center justify-center py-28 md:py-24 [@media(max-height:600px)]:py-32 overflow-hidden">
       
       {/* Top Gradient Fade (Vignette Effect) */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-400 to-transparent pointer-events-none opacity-70"></div>
@@ -36,26 +36,26 @@ const NotJustAds = () => {
             <img 
                 src="/sparklepair.png" 
                 alt="Sparkles" 
-                className="absolute left-[2%] md:left-[1%] top-[35%] -translate-y-1/2 w-20 md:w-28 h-auto opacity-80"
+                className="absolute -left-[1%] md:left-[1%] top-[10%] md:top-[35%] -translate-y-1/2 w-20 md:w-28 h-auto opacity-80"
             />
             
             {/* Right Big Stars */}
             <img 
                 src="/sparklepair2.png" 
                 alt="Sparkles" 
-                className="absolute right-[2%] md:right-[1%] top-[110%] -translate-y-1/2 w-20 md:w-28 h-auto opacity-80"
+                className="absolute -right-[3%] md:right-[1%] top-[90%] md:top-[110%] -translate-y-1/2 w-20 md:w-28 h-auto opacity-80"
             />
 
             {/* Small Scattered Sparkles */}
             {/* Left */}
-            <img src="/tinystar.png" className="absolute left-[10%] -bottom-32 w-6 h-auto" />
-            <img src="/tinystar.png" className="absolute left-[25%] top-0 w-4 h-auto" />
-            <img src="/tinystar.png" className="absolute left-[30%] top-[80%] w-4 h-auto" />
+            <img src="/tinystar.png" className="absolute left-[5%] md:left-[10%] -bottom-28 md:-bottom-32 w-6 h-auto" />
+            <img src="/tinystar.png" className="absolute left-[35%] md:left-[25%] top-0 w-4 h-auto" />
+            <img src="/tinystar.png" className="absolute left-[15%] md:left-[30%] top-[80%] w-4 h-auto" />
             
             {/* Right */}
-            <img src="/tinystar.png" className="absolute right-[25%] bottom-0 w-6 h-auto" />
-            <img src="/tinystar.png" className="absolute right-[12%] top-15 w-4 h-auto" />
-            <img src="/tinystar.png" className="absolute right-[22%] top-10 w-4 h-auto" />
+            <img src="/tinystar.png" className="absolute right-[25%] -bottom-5 md:bottom-0 w-3 md:w-6 h-auto" />
+            <img src="/tinystar.png" className="absolute right-[4%] md:right-[12%] top-5 md:top-15 w-4 h-auto" />
+            <img src="/tinystar.png" className="absolute right-[14%] md:right-[22%] top-20 md:top-10 w-4 h-auto" />
 
         </div>
 
@@ -81,7 +81,7 @@ const NotJustAds = () => {
         </div>
 
         {/* 3. Bottom Pills / Buttons */}
-        <div className="mt-16 w-full flex flex-wrap justify-center gap-4 md:gap-4 xl:gap-6">
+        <div className="mt-10 md:mt-16 w-full flex flex-wrap justify-center gap-4 md:gap-4 xl:gap-6">
             
             {/* Feature Pills */}
             {features.map((item, index) => (

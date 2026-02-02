@@ -1,80 +1,87 @@
-import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
+import React, { useRef, useEffect, useState, useLayoutEffect, memo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const services = [
+    "SCALING E-COMMERCE",
+    "LEAD GENERATION",
+    "GROWTH HACKING",
+    "WEB DESIGN & DEVELOPMENT"
+];
+
+const rawPhrases  = [
+    "Breaking the 'Buy' Button",
+    "Emptying the Warehouse",
+    "Attracting, Not Chasing",
+    "Altering Strangers Into Stalkers",
+    "Legal Steroids for Business",
+    "Business Cheat Codes",
+    "Love at First Scroll",
+    "Love at First Pixel"
+];
 const Service = () => {
     const containerRef = useRef(null);
-    const services = [
-        "SCALING E-COMMERCE",
-        "LEAD GENERATION",
-        "GROWTH HACKING",
-        "WEB DESIGN & DEVELOPMENT"
-    ];
-
-    const rawPhrases  = [
-        "Breaking the 'Buy' Button",
-        "Emptying the Warehouse",
-        "Attracting, Not Chasing",
-        "Altering Strangers Into Stalkers",
-        "Legal Steroids for Business",
-        "Business Cheat Codes",
-        "Love at First Scroll",
-        "Love at First Pixel"
-    ];
-
-    const [randomizedPhrases, setRandomizedPhrases] = useState([]);
 
     // 1. Randomize Phrases
-    useEffect(() => {
-        const selected = services.map((_, index) => {
+    const [randomizedPhrases] = useState(() => {
+        return services.map((_, index) => {
             const baseIndex = index * 2;
             const offset = Math.random() > 0.5 ? 1 : 0;
             return rawPhrases[baseIndex + offset];
         });
-        setRandomizedPhrases(selected);
-    }, []);
+    });
 
     // 2. Mouse Tracking Logic (Flashlight Effect)
-    useEffect(() => {
+    useLayoutEffect(() => {
         const el = containerRef.current;
         if (!el) return;
 
-        const xTo = gsap.quickTo(el, "--x", { duration: 0.4, ease: "power3.out" });
-        const yTo = gsap.quickTo(el, "--y", { duration: 0.4, ease: "power3.out" });
-        const sizeTo = gsap.quickTo(el, "--size", { duration: 0.3, ease: "power2.out" });
+        let mm = gsap.matchMedia();
 
-        const handleMouseMove = (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+        mm.add("(min-width: 768px)", () => {
 
-            xTo(x);
-            yTo(y);
+            const xTo = gsap.quickTo(el, "--x", { duration: 0.4, ease: "power3.out" });
+            const yTo = gsap.quickTo(el, "--y", { duration: 0.4, ease: "power3.out" });
+            const sizeTo = gsap.quickTo(el, "--size", { duration: 0.3, ease: "power2.out" });
 
-            const topBuffer = 65;
-            const bottomBuffer = rect.height - 60;
-            const distTop = y - topBuffer;
-            const distBottom = bottomBuffer - y;
-            const distLeft = x;
-            const distRight = rect.width - x;
-            const minDist = Math.min(distTop, distBottom, distLeft, distRight);
-            const maxRadius = 65; 
-            const targetRadius = Math.max(0, Math.min(minDist, maxRadius));
+            const handleMouseMove = (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
 
-            sizeTo(targetRadius * 2);
-        };
+                xTo(x);
+                yTo(y);
 
-        const handleMouseLeave = () => sizeTo(0);
+                const topBuffer = 65;
+                const bottomBuffer = rect.height - 60;
+                const distTop = y - topBuffer;
+                const distBottom = bottomBuffer - y;
+                const distLeft = x;
+                const distRight = rect.width - x;
+                const minDist = Math.min(distTop, distBottom, distLeft, distRight);
+                const maxRadius = 65; 
+                const targetRadius = Math.max(0, Math.min(minDist, maxRadius));
 
-        el.addEventListener("mousemove", handleMouseMove);
-        el.addEventListener("mouseleave", handleMouseLeave);
+                sizeTo(targetRadius * 2);
+            };
+
+            const handleMouseLeave = () => sizeTo(0);
+
+            el.addEventListener("mousemove", handleMouseMove);
+            el.addEventListener("mouseleave", handleMouseLeave);
+
+            return () => {
+                el.removeEventListener("mousemove", handleMouseMove);
+                el.removeEventListener("mouseleave", handleMouseLeave);
+                // Reset size to 0 if resizing down to mobile
+                gsap.set(el, { "--size": "0px" });
+            };
+        });
         
-        return () => {
-            el.removeEventListener("mousemove", handleMouseMove);
-            el.removeEventListener("mouseleave", handleMouseLeave);
-        };
+        return () => mm.revert();
+        
     }, []);
 
     // 3. ENTRANCE ANIMATION LOGIC (Runs Once)
@@ -85,6 +92,7 @@ const Service = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top 70%",
+                    toggleActions: "play none none reverse",
                     once: true,
                 }
             });
@@ -125,7 +133,7 @@ const Service = () => {
         }, containerRef);
 
         return () => ctx.revert();
-    }, [services]); 
+    }, []); 
 
 
     // 4. Reusable Content Component
@@ -133,8 +141,8 @@ const Service = () => {
         <div className="p-5 md:p-10 w-full flex flex-col justify-center h-full">
             <div>
                 {/* TITLE */}
-                <div className="overflow-hidden flex justify-end mb-10">
-                    <h1 className={`service-title pb-1 text-4xl md:text-6xl font-extralight opacity-0 translate-y-[110%] ${colorClass}`}>
+                <div className="overflow-hidden flex justify-end mb-5 md:mb-10 [@media(max-height:600px)]:mb-4">
+                    <h1 className={`service-title pb-1 text-3xl md:text-6xl font-extralight opacity-0 translate-y-[110%] [@media(max-height:600px)]:text-4xl ${colorClass}`}>
                         { isPhrase ? "The Secret Strategy" : "Services Provided" }
                     </h1>
                 </div>
@@ -150,7 +158,7 @@ const Service = () => {
                             ${colorClass === 'text-black' ? 'bg-black opacity-30' : 'bg-white opacity-30'}
                         `}></div>
                         {/* Text Wrapper with Overflow Hidden for the "Rise Up" effect */}
-                        <div className="min-h-[110px] 2xl:min-h-[120px] flex items-center flex-wrap content-center overflow-hidden">
+                        <div className="py-6 md:py-0 md:min-h-[110px] 2xl:min-h-[120px] [@media(max-height:600px)]:min-h-[100px] flex items-center flex-wrap content-center overflow-hidden">
                             {item.split(" ").map((word, i) => (
                                 <span key={i} className="relative overflow-hidden inline-flex">
                                     <p 
@@ -161,8 +169,8 @@ const Service = () => {
                                             
                                             uppercase ${colorClass}
                                             ${isPhrase 
-                                                ? 'text-2xl md:text-4xl lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] tracking-wide'
-                                                : 'text-4xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] 2xl:text-[5rem]'
+                                                ? 'text-[30px] md:text-4xl lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] tracking-wide [@media(max-height:600px)]:text-[3.5rem]'
+                                                : 'text-[42px] md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] 2xl:text-[5rem] [@media(max-height:600px)]:text-[4.2rem]'
                                             }
                                             mr-3 md:mr-5
                                         `}
@@ -176,13 +184,13 @@ const Service = () => {
                         {/* BOTTOM DIVIDER LINE */}
                     </div>
                 ))}
-                <div className={`service-top-line w-full h-[1px] origin-left scale-x-0 ${colorClass === 'text-black' ? 'bg-black opacity-30' : 'bg-white opacity-30'}`}></div>
+                <div className={`service-top-lintecte w-full h-[1px] origin-left scale-x-0 ${colorClass === 'text-black' ? 'bg-black opacity-30' : 'bg-white opacity-30'}`}></div>
             </div>
         </div>
     );
 
     return (
-         <section className="mx-auto pt-14 2xl:pt-20 relative z-0 bg-black min-h-screen">
+         <section className="mx-auto pt-16 md:pt-14 2xl:pt-20 relative z-0 bg-black min-h-screen">
             <div 
                 ref={containerRef}
                 className="container mx-auto max-w-full relative z-20 overflow-hidden"
@@ -211,4 +219,4 @@ const Service = () => {
     );
 };
 
-export default Service;
+export default memo(Service);

@@ -3,7 +3,7 @@ import { DottedGlowBackground } from "@/components/ui/dotted-glow-background"; /
 
 const HeroCard = () => {
     return (
-        <div className="relative w-full md:max-w-5xl xl:max-w-6xl mx-auto rounded overflow-hidden bg-black text-white shadow-2xl border border-neutral-800">
+        <div className="relative w-full md:max-w-4xl xl:max-w-[940px] laptop:max-w-6xl mx-auto rounded-lg overflow-hidden bg-black text-white shadow-2xl border border-neutral-800">
             {/* 
                PERFORMANCE FIX: 
                Increased gap from 10 to 25. 
@@ -32,9 +32,9 @@ const HeroCard = () => {
             </div> */}
 
             {/* Content Container - Needs z-10 to sit ON TOP of the canvas */}
-            <div className="relative z-10 p-3 md:p-3 xl:p-5 flex flex-col items-center justify-center text-center">
-                <p className="w-full max-w-6xl italic text-lg md:text-xl xl:text-2xl font-light text-white leading-relaxed">
-                    The Max ROAS team creates a stable, scalable revenue engine that drives predictable results <br /> and long-term business expansion. We scale brands’ revenue every single day.
+            <div className="relative z-10 p-3 md:p-2 xl:p-3 laptop:p-5 flex flex-col items-center justify-center text-center">
+                <p className="w-full xl:max-w-4xl laptop:max-w-6xl italic text-lg md:leading-7 md:text-[18px] xl:text-[18px] laptop:text-2xl font-light text-white leading-relaxed">
+                    The Max ROAS team creates a stable, scalable revenue engine that drives predictable results and long-term business expansion. We scale brands’ revenue every single day.
                 </p>                
             </div>
         </div>

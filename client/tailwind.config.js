@@ -6,6 +6,14 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
+	screens: {
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      laptop: '1366px',
+      'laptop-lg': '1440px',
+      '2xl': '1536px',
+    },
   	extend: {
   		fontFamily: {
   			mont: [

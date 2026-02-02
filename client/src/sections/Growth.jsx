@@ -99,7 +99,7 @@ const Growth = () => {
       <div className="container mx-auto max-w-[1400px]">
         
         {/* --- Header / Title --- */}
-        <h2 className="text-white text-5xl 2xl:text-6xl font-bold text-left mb-4">
+        <h2 className="text-white ml-5 md:ml-0 text-5xl md:text-5xl 2xl:text-6xl font-bold text-left mb-12 md:mb-4">
             Real Results.
             <span className="opacity-50 font-light"> Real Growth.</span>
         </h2>
@@ -108,7 +108,7 @@ const Growth = () => {
         <div className="p-2 2xl:p-6 relative overflow-hidden">
             
             {/* Top Metrics Grid */}
-            <div className="flex justify-between mb-12 px-4 md:px-0 flex-wrap gap-8">
+            <div className="flex justify-between mb-12 px-4 md:px-0 flex-wrap gap-12 md:gap-8">
 
                 {/* Metric 0: Ad Campaigns (approx width needed ~150px) */}
                 <div className="text-left min-w-[150px]">
@@ -154,7 +154,7 @@ const Growth = () => {
             </div>
 
             {/* --- The Graph --- */}
-            <div className="relative w-full h-[450px] 2xl:h-[500px] mt-10 -mx-4 md:mx-0">
+            <div className="hidden md:block relative w-full h-[450px] 2xl:h-[500px] mt-10 -mx-4 md:mx-0">
                 <svg 
                     viewBox="0 0 1000 400" 
                     className="w-full h-full p-5 2xl:p-0 overflow-visible"

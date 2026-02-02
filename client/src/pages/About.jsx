@@ -104,7 +104,7 @@ const About = () => {
       {/* Page Title */}
       <div className="flex justify-center mb-20">
         <div className="relative">
-            <h1 className="text-5xl md:text-6xl tracking-wide">About Us</h1>
+            <h1 className="text-4xl md:text-6xl tracking-wide">About Us</h1>
             
         </div>
       </div>
@@ -114,12 +114,12 @@ const About = () => {
         {/* --- SECTION 1: FOUNDERS --- */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <h2 className="text-3xl md:text-4xl leading-tight overflow-hidden">
-              <span className="drop-cap text-7xl md:text-[85px] text-[#ffffff] mr-1 float-left">B</span>
+            <h2 className="text-2xl md:text-4xl leading-tight overflow-hidden">
+              <span className="drop-cap text-6xl md:text-[85px] text-[#ffffff] mr-1 float-left">B</span>
               <span className="hero-subtext inline-block opacity-0 translate-y-[100%]">uilt by marketers, <br/> driven by results.</span>
             </h2>
             
-            <div className="hero-subtext opacity-0 translate-y-[50%] space-y-6 text-gray-300 text-xl leading-relaxed">
+            <div className="hero-subtext opacity-0 translate-y-[50%] space-y-6 text-gray-300 text-base md:text-xl leading-relaxed">
               <p>
                 Max ROAS was founded by performance marketing experts & partners,
                 Kokila and Avinash. With a combined experience across digital marketing
@@ -128,8 +128,8 @@ const About = () => {
                 the reality behind the scenes.
               </p>
               
-              <h3 className="text-white font-bold text-xl pt-4">Why Max ROAS Was Born</h3>
-              <p>
+              <h3 className="text-white font-semibold text-xl pt-4">Why Max ROAS Was Born</h3>
+              <p className="text-base md:text-xl">
                 While helping a well-known fashion brand scale through paid ads, we
                 uncovered a recurring problem in the market.
               </p>
@@ -151,14 +151,14 @@ const About = () => {
             {/* Quote Pill */}
             <div className="parallax-text relative">
                 <p className="text-center font-semibold text-xl md:text-[28px] mb-10">
-                    “ Most brands don’t fail because ads don’t work, <br/>
+                    “ Most brands don’t fail because ads don’t work, <br className="hidden md:block"/>
                     they fail because marketing lacks ownership ”
                 </p>
             </div>
 
             <div className="parallax-text pb-10">
-                <p className="font-semibold text-center text-2xl mb-4 text-white">What we observed repeatedly</p>
-                <ul className="text-2xl space-y-2 text-center text-gray-300">
+                <p className="font-semibold text-center text-xl md:text-2xl mb-4 text-white">What we observed repeatedly</p>
+                <ul className="text-xl md:text-2xl space-y-2 text-center text-gray-300">
                 <li>Agencies don’t work closely with the product or brand reality.</li>
                 <li>Campaigns are handled by freshers or inexperienced executors.</li>
                 <li>Brands struggle to hire or retain expert in-house teams while scaling.</li>
@@ -188,12 +188,12 @@ const About = () => {
           </div>
 
           <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6">
-            <h2 className="text-3xl md:text-4xl leading-tight overflow-hidden">
-              <span className="drop-cap text-7xl md:text-[85px] text-[#ffffff] mr-1 float-left">O</span>
-              <span className="drop-cap inline-block">ur learnings before <br/> launching Max ROAS</span>
+            <h2 className="text-2xl md:text-4xl leading-tight overflow-hidden">
+              <span className="drop-cap text-6xl md:text-[85px] text-[#ffffff] mr-1 float-left">O</span>
+              <span className="drop-cap md:inline-block">ur learnings before <br className="hidden md:block"/> launching Max ROAS</span>
             </h2>
 
-            <div className="parallax-text text-gray-300 text-lg leading-relaxed space-y-6">
+            <div className="parallax-text text-gray-300 text-base md:text-lg leading-relaxed space-y-6">
                 <p>
                     Instead of rushing to start another agency, we did the opposite. For more
                     than 3+ years, we partnered with a select number of brands, immersing
@@ -213,7 +213,7 @@ const About = () => {
              <div className="parallax-text">
                 <p className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2 text-center">Our Core Belief</p>
                 <p className="text-center font-semibold text-xl md:text-[28px]">
-                    “ Anyone working on a brand’s marketing <br/>
+                    “ Anyone working on a brand’s marketing <br className="hidden md:block"/>
                     should treat it like their own business. ”
                 </p>
             </div>
@@ -223,23 +223,23 @@ const About = () => {
         {/* --- SECTION 3: DIFFERENTIATOR --- */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 flex flex-col gap-6">
-                <h2 className="text-3xl md:text-4xl leading-tight overflow-hidden">
-                    <span className="drop-cap text-7xl md:text-[85px] text-[#ffffff] mr-1 float-left">W</span>
-                    <span className="drop-cap inline-block">hat makes Max ROAS <br/> different</span>
+                <h2 className="text-2xl md:text-4xl leading-tight overflow-hidden">
+                    <span className="drop-cap text-6xl md:text-[85px] text-[#ffffff] mr-1 float-left">W</span>
+                    <span className="drop-cap md:inline-block">hat makes Max ROAS <br className="hidden md:block"/> different</span>
                 </h2>
                 
-                <p className="parallax-text text-gray-300 text-lg">
+                <p className="parallax-text text-gray-300 text-base md:text-lg">
                     We didn’t want to be “just another agency”. So we built Max ROAS to function as,
                 </p>
 
                 {/* Highlight Strip */}
                 <div className="parallax-text my-4">
                     <p className="text-white font-extrabold text-xl md:text-[28px] skew-x-2">
-                        An In-House Marketing Team — <span className="font-medium">Without the In-House Burden</span>
+                        An In-House Marketing Team,  <span className="font-medium">Without the In-House Burden</span>
                     </p>
                 </div>
 
-                <ul className="parallax-text space-y-4 text-gray-300 text-lg mt-2">
+                <ul className="parallax-text space-y-4 text-gray-300 text-base md:text-lg mt-2">
                     <li className="flex items-start gap-3">
                         <span className="mt-2.5 w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
                         We work inside your business, not outside it
