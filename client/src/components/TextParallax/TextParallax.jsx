@@ -53,7 +53,7 @@ const TextParallax = () => {
             {[...Array(4)].map((_, i) => (
                 <div key={i} className="flex">
                     {items.map((word, idx) => (
-                        <span key={idx} className="mx-4 md:mx-4 flex items-center">
+                        <span key={idx} className="ml-4 md:ml-0 md:mx-6 flex items-center">
                             {word}
                             <span className="ml-4 text-white md:ml-8 w-2 h-2 md:w-3 md:h-3 bg-current rounded-full opacity-30"></span>
                         </span>
