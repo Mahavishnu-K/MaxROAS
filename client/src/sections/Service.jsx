@@ -169,8 +169,8 @@ const Service = () => {
                                             
                                             uppercase ${colorClass}
                                             ${isPhrase 
-                                                ? 'text-[30px] md:text-4xl lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] tracking-wide [@media(max-height:600px)]:text-[3.5rem]'
-                                                : 'text-[42px] md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] 2xl:text-[5rem] [@media(max-height:600px)]:text-[4.2rem]'
+                                                ? 'text-[30px] md:text-4xl lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] tracking-wide max-[380px]:text-[28px] max-[362px]:text-[26px] [@media(max-height:600px)]:text-[3.5rem]'
+                                                : 'text-[42px] md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] 2xl:text-[5rem] max-[380px]:text-[40px] max-[362px]:text-[38px] [@media(max-height:600px)]:text-[4.2rem]'
                                             }
                                             mr-3 md:mr-5
                                         `}

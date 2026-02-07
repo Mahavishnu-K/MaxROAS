@@ -38,35 +38,6 @@ const Comparison = () => {
         {/* Comparison Cards Grid */}
         {/* Mobile Fix: Added gap-8 so stacked cards have space. Reset to gap-0 on desktop. */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 2xl:gap-16 justify-items-center">
-          
-          {/* --- CARD 1: MAX ROAS (The Winner) --- */}
-          {/* Mobile Fix: Reduced padding to p-6. Kept desktop styling exactly as is. */}
-          <div className="bg-white text-black rounded-lg w-full mx-auto max-w-full md:max-w-[430px] 2xl:max-w-none 2xl:w-full p-6 md:p-8 2xl:p-10 relative overflow-hidden transform md:scale-110 z-10 shadow-lg md:shadow-none">
-            {/* Header */}
-            <div className="text-center mb-6 2xl:mb-10">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-2">Max ROAS</h3>
-              <div className="h-[0.5px] w-full bg-black mx-auto rounded-full"></div>
-            </div>
-
-            {/* List */}
-            <ul className="space-y-4">
-              {features.map((item, index) => (
-                <li key={index} className="flex items-start gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mt-1 md:mt-0 [@media(max-height:600px)]:w-5 [@media(max-height:600px)]:h-5">
-                    <img 
-                      src="/verified tick black.png" 
-                      alt="Verified" 
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  {/* Mobile Fix: Text base for mobile, text-lg for desktop */}
-                  <span className="text-base md:text-lg [@media(max-height:600px)]:text-base font-medium leading-tight [@media(max-height:600px)]:leading-tight">
-                    {item.max}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* --- CARD 2: AGENCIES --- */}
           {/* Mobile Fix: Reduced padding to p-6. */}
@@ -79,10 +50,10 @@ const Comparison = () => {
             </div>
 
             {/* List */}
-            <ul className="space-y-4 [@media(max-height:600px)]:space-y-3">
+            <ul className="space-y-5 [@media(max-height:600px)]:space-y-3">
               {features.map((item, index) => (
                 <li key={index} className="flex items-start gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-5 h-5 mt-1 md:mt-0 [@media(max-height:600px)]:w-4 [@media(max-height:600px)]:h-4">
+                  <div className="flex-shrink-0 w-5 h-5 [@media(max-height:600px)]:w-4 [@media(max-height:600px)]:h-4">
                     <img 
                       src="/X mark black.png" 
                       alt="Cross" 
@@ -98,7 +69,35 @@ const Comparison = () => {
               ))}
             </ul>
           </div>
+            
+            {/* --- CARD 1: MAX ROAS (The Winner) --- */}
+          {/* Mobile Fix: Reduced padding to p-6. Kept desktop styling exactly as is. */}
+          <div className="bg-white text-black rounded-lg w-full mx-auto max-w-full md:max-w-[430px] 2xl:max-w-none 2xl:w-full p-6 md:p-8 2xl:p-10 relative overflow-hidden transform md:scale-110 z-10 shadow-lg md:shadow-none">
+            {/* Header */}
+            <div className="text-center mb-6 2xl:mb-10">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-2">Max ROAS</h3>
+              <div className="h-[0.5px] w-full bg-black mx-auto rounded-full"></div>
+            </div>
 
+            {/* List */}
+            <ul className="space-y-5">
+              {features.map((item, index) => (
+                <li key={index} className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 [@media(max-height:600px)]:w-5 [@media(max-height:600px)]:h-5">
+                    <img 
+                      src="/verified tick black.png" 
+                      alt="Verified" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  {/* Mobile Fix: Text base for mobile, text-lg for desktop */}
+                  <span className="text-base md:text-lg [@media(max-height:600px)]:text-base font-medium leading-tight [@media(max-height:600px)]:leading-tight">
+                    {item.max}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
       </div>

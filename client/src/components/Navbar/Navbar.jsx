@@ -107,7 +107,7 @@ const DesktopNavbar = ({ currentActive, handleNavClick }) => {
   };
 
   // Nav List configuration
-  const navLinks = ["Who are we", "Clients", "Service", "Community", "Work", "Growth", "About us"];
+  const navLinks = ["Who are we", "Clients", "Service", "Work", "Growth", "About us"];
 
   return (
     <>
@@ -167,7 +167,7 @@ const MobileNavbar = ({ currentActive, handleNavClick }) => {
     handleNavClick(label); // FIX: Just pass label
   };
 
-  const navLinks = ["Who are we", "Clients", "Service", "Community", "Work", "Growth", "About us"];
+  const navLinks = ["Who are we", "Clients", "Service", "Work", "Growth", "About us"];
 
   return (
     <div className="md:hidden flex items-start z-50">
@@ -239,7 +239,7 @@ const Navbar = ({ scrollToSection, refs, activeSection }) => {
       "Who are we": refs.heroRef,
       "Clients": refs.specialRef,
       "Service": refs.servicesRef,
-      "Community": refs.customerRef,
+      //"Community": refs.customerRef,
       "Work": refs.processRef,
       "Growth": refs.growthRef,
     };
@@ -272,7 +272,7 @@ const Navbar = ({ scrollToSection, refs, activeSection }) => {
                 onClick={() => { navigate("/"); window.scrollTo(0,0); }}
               >
                 <div className="text-xl xl:text-2xl font-normal">Max</div>
-                <div className="text-2xl xl:text-3xl font-bold leading-[0.7] xl:leading-[0.6]">ROAS</div>
+                <div className="text-2xl xl:text-3xl font-bold leading-[0.6]">ROAS</div>
               </div>
             </div>
 

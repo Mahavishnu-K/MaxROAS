@@ -4,15 +4,15 @@ import Rounded from "../RoundedButton/Rounded";
 const Footer = () => {
   // --- Content ---
   const leftLinks = [
-    { name: "Plans & Pricing", href: "/pricing" },
+   // { name: "Plans & Pricing", href: "/pricing" },
     { name: "About Us", href: "/about-us" },
-    { name: "Careers", href: "/careers" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   const socialLinks = [
         {
             name: "Instagram",
-            href: "#",
+            href: "",
             path: <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,5A1.25,1.25 0 0,1 19.25,6.25A1.25,1.25 0 0,1 18,7.5A1.25,1.25 0 0,1 16.75,6.25A1.25,1.25 0 0,1 18,5Z" />
         },
         // {
@@ -62,9 +62,9 @@ const Footer = () => {
             {/* 2. Center Column: Brand + Socials */}
             <div className="centerColumnStyle">
                 <div className="flex flex-col leading-none justify-center text-white">
-                    <div className="text-6xl font-normal">Max</div>
-                    <div className="text-8xl font-bold roas-text">ROAS</div>
-                    <div className="text-[20px] mt-1 ml-[8px]">Your in-house digital team</div>
+                    <div className="text-6xl [@media(max-width:385px)]:text-[56px] font-normal">Max</div>
+                    <div className="text-8xl [@media(max-width:385px)]:text-[84px] font-bold roas-text">ROAS</div>
+                    <div className="text-[20px] [@media(max-width:385px)]:text-[18px] mt-1 ml-[8px]">Your in-house digital team</div>
                 </div>
               
               <div className="social-container flex gap-3 md:mt-6">
@@ -98,7 +98,7 @@ const Footer = () => {
             {/* 3. Right Column: Contact Us */}
             {/* Added className 'right-columnStyle' */}
             <div className="right-columnStyle">
-              <h4 className="column-title">Contact Us</h4>
+              {/* <h4 className="column-title">Contact Us</h4>
               
               <div className="contact-block">
                 <p className="contact-name">Kokilavani</p>
@@ -110,7 +110,7 @@ const Footer = () => {
                 <a href="mailto:maxroasindia@gmail.com" className="contact-email">
                   maxroasindia@gmail.com
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -312,7 +312,7 @@ const Footer = () => {
             .footerCardStyle {
                 height: auto !important; /* Overrides 510px fixed height */
                 padding-bottom: 3rem !important;
-                gap: 3rem !important;
+                gap: 1rem !important;
             }
 
             .topSectionStyle {
@@ -330,12 +330,14 @@ const Footer = () => {
             .left-columnStyle {
                 align-items: left !important;
                 text-align: left !important;
+                flex: 1 1 110px !important; 
+                gap: 0.5rem !important;
                 width: 100%;
             }
 
             /* Center align the Contact column */
             .right-columnStyle {
-                width: 100%;
+                display: none !important; /* Hides the right column on mobile */
             }
 
             /* Ensure hover effect on links doesn't push them off-center on mobile */

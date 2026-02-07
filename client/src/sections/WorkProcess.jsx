@@ -89,17 +89,22 @@ const WorkProcess = () => {
 
               {/* Special Arrow Connector */}
               {step.hasArrow && (
-                <div className="hidden lg:flex absolute -right-24 top-8 flex-col items-center justify-center w-40">
-                  <span className="text-[10px] md:text-xs font-semibold mb-1 text-gray-600 whitespace-nowrap">
+                <div className="flex absolute -right-12 top-10 lg:-right-24 lg:top-8 flex-col items-center justify-center w-16 lg:w-40 z-10 pointer-events-none">
+                  {/* Text: Tiny on mobile, normal on desktop */}
+                  <span className="text-[8px] md:text-xs font-semibold mb-1 text-gray-600 whitespace-nowrap">
                     Only 5% ratio
                   </span>
-                  <span className="text-[10px] md:text-xs font-semibold mb-0 text-gray-600 whitespace-nowrap -mt-1">
+                  <span className="text-[8px] md:text-xs font-semibold mb-0 text-gray-600 whitespace-nowrap -mt-1">
                     on our journey
                   </span>
+                  
                   {/* CSS Arrow Line */}
                   <div className="relative w-full h-[1px] bg-black mt-1">
-                    <div className="absolute left-0 -top-[3px] w-1.5 h-1.5 bg-black rounded-full"></div>
-                    <div className="absolute right-0 -top-[3px] w-0 h-0 border-t-[4px] border-t-transparent border-l-[6px] border-l-black border-b-[4px] border-b-transparent"></div>
+                    {/* Left Dot */}
+                    <div className="absolute -left-1 -top-[1.5px] lg:-top-[3px] w-1 lg:w-1.5 h-1 lg:h-1.5 bg-black rounded-full"></div>
+                    
+                    {/* Right Arrow Head */}
+                    <div className="absolute -right-1 -top-[1.8px] lg:-top-[3px] w-0 h-0 border-t-[3px] lg:border-t-[4px] border-t-transparent border-l-[4px] lg:border-l-[6px] border-l-black border-b-[3px] lg:border-b-[4px] border-b-transparent"></div>
                   </div>
                 </div>
               )}

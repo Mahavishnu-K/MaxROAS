@@ -66,8 +66,8 @@ const Special = () => {
         <section className="mx-auto pt-24 bg-white relative z-0 max-h-screen flex flex-col justify-center overflow-hidden">
             <div className="container mx-auto max-w-full relative z-20 pb-20">
                 <div className="p-5 md:p-5 w-full">
-                    <h1 className="text-4xl md:text-5xl 2xl:text-6xl flex items-center text-center justify-center mb-4">Our Fortune Clients</h1>
-                    <p className="text-xl flex justify-center text-black text-center max-w-2xl mx-auto mb-10 2xl:mb-16">
+                    <h1 className="text-4xl md:text-5xl 2xl:text-6xl flex items-center text-center justify-center mb-10 md:mb-4">Our Fortune Clients</h1>
+                    <p className="text-xl flex justify-center text-black text-center max-w-2xl mx-auto mb-16 2xl:mb-16">
                         We are fortunate to work with the below brands for a long time and learning a lot of experience and insights!
                     </p>
 

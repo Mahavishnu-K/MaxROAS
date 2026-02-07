@@ -88,7 +88,7 @@ const About = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full bg-black select-none text-white overflow-hidden pt-32 pb-20">
+    <div ref={containerRef} className="relative w-full bg-black select-none text-white overflow-hidden pt-24 md:pt-32 pb-20">
         
         {/* Background Grid Pattern */}
         <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
@@ -102,18 +102,18 @@ const About = () => {
         </div>
  
       {/* Page Title */}
-      <div className="flex justify-center mb-20">
+      <div className="flex justify-center mb-8 lg:mb-20">
         <div className="relative">
             <h1 className="text-4xl md:text-6xl tracking-wide">About Us</h1>
             
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl flex justify-center items-center flex-col gap-20">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl flex justify-center items-center flex-col gap-20 z-10">
 
         {/* --- SECTION 1: FOUNDERS --- */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 flex flex-col gap-6">
+          <div className="lg:col-span-7 flex flex-col gap-6 order-last lg:order-first">
             <h2 className="text-2xl md:text-4xl leading-tight overflow-hidden">
               <span className="drop-cap text-6xl md:text-[85px] text-[#ffffff] mr-1 float-left">B</span>
               <span className="hero-subtext inline-block opacity-0 translate-y-[100%]">uilt by marketers, <br/> driven by results.</span>
@@ -136,7 +136,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-5 reveal-image">
+          {/* IMAGE CONTAINER: First on Mobile, Last on Desktop */}
+          <div className="lg:col-span-5 reveal-image order-first lg:order-last">
              <div className="relative overflow-hidden">
                 <img 
                     src="/about/About1.png" 
@@ -146,6 +147,7 @@ const About = () => {
              </div>
           </div>
         </section>
+
 
         <section>
             {/* Quote Pill */}
@@ -272,14 +274,14 @@ const About = () => {
         </section>
 
         {/* --- SECTION 4: PROMISE & CTA --- */}
-        <section className="flex flex-col min-h-[700px] items-center justify-center gap-16 py-10">
+        <section className="flex flex-col items-center justify-center gap-12 lg:gap-16 py-10">
             <div className="parallax-text text-center">
                 <h3 className="text-3xl md:text-6xl mb-4">Our Promise!</h3>
-                <p className="text-2xl md:text-5xl font-bold mb-6">Brand Growth = Our Success</p>
+                <p className="text-2xl md:text-5xl font-bold mb-4 lg:mb-6">Brand Growth = Our Success</p>
                 <p className="text-xl text-gray-400 font-medium">We grow only when your brand grows</p>
             </div>
 
-            <div className="parallax-text">
+            <div className="z-10">
                  {/* Invert true makes the button white on black bg */}
                 <Button text="Reach Us" invert={true} />
             </div>

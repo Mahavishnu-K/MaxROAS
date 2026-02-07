@@ -12,12 +12,15 @@ const NotJustAds = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-white flex flex-col items-center justify-center py-28 md:py-24 [@media(max-height:600px)]:py-32 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-white flex flex-col items-center justify-center py-24 md:py-28 [@media(max-height:600px)]:py-32 overflow-hidden">
       
       {/* Top Gradient Fade (Vignette Effect) */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-400 to-transparent pointer-events-none opacity-70"></div>
 
       {/* --- MAIN CONTENT --- */}
+    <h2 className="work-heading mb-10 md:mb-0 text-3xl md:text-[46px] 2xl:text-6xl [@media(max-height:600px)]:text-4xl text-center">
+        How We Do It
+    </h2>
       <div className="container select-none mx-auto px-4 flex flex-col items-center z-10">
         
         {/* 1. Illustration Area */}
@@ -49,7 +52,7 @@ const NotJustAds = () => {
             {/* Small Scattered Sparkles */}
             {/* Left */}
             <img src="/tinystar.png" className="absolute left-[5%] md:left-[10%] -bottom-28 md:-bottom-32 w-6 h-auto" />
-            <img src="/tinystar.png" className="absolute left-[35%] md:left-[25%] top-0 w-4 h-auto" />
+            <img src="/tinystar.png" className="absolute left-[35%] md:left-[25%] top-0 md:top-14 w-4 h-auto" />
             <img src="/tinystar.png" className="absolute left-[15%] md:left-[30%] top-[80%] w-4 h-auto" />
             
             {/* Right */}

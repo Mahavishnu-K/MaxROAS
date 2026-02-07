@@ -93,7 +93,7 @@ const Home = () => {
         <section ref={servicesRef}><Services /></section>
         <section><NotJustAds /></section>
         <TextParallax />
-        <section ref={customerRef}><Customer /></section>
+        {/* <section ref={customerRef}><Customer /></section> */}
         <section ><Comparison /></section>
         <section ref={processRef}><WorkProcess /></section>
         <section ref={growthRef}><Growth /></section>

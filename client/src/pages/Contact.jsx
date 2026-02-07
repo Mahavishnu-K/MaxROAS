@@ -75,7 +75,7 @@ const Contact = () => {
             {/* </a> */}
 
             {/* LinkedIn */}
-            <a href="#" className="flex items-center gap-6 group w-fit">
+            {/* <a href="#" className="flex items-center gap-6 group w-fit">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
@@ -90,8 +90,8 @@ const Contact = () => {
               </div>
               {/* <span className="text-sm font-bold tracking-[0.15em] text-gray-700 uppercase">
                 LinkedIn
-              </span> */}
-            </a>
+              </span> 
+            </a> */}
 
             {/* WhatsApp */}
             <a href="https://wa.me/+918122497759" className="flex items-center gap-6 group w-fit">
