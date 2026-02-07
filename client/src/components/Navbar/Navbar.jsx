@@ -272,7 +272,7 @@ const Navbar = ({ scrollToSection, refs, activeSection }) => {
                 onClick={() => { navigate("/"); window.scrollTo(0,0); }}
               >
                 <div className="text-xl xl:text-2xl font-normal">Max</div>
-                <div className="text-2xl xl:text-3xl font-bold leading-[0.6]">ROAS</div>
+                <div className="text-2xl xl:text-3xl font-bold leading-[0.6] xl:leading-[0.6]">ROAS</div>
               </div>
             </div>
 
