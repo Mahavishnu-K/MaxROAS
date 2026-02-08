@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button/Button.jsx";
 
 const Comparison = () => {
 
@@ -24,7 +25,7 @@ const Comparison = () => {
       <div className="container mx-auto px-5 md:px-24 2xl:px-6 max-w-6xl overflow-hidden md:overflow-visible">
         
         {/* Header */}
-        <div className="text-center mb-10 md:mb-10 2xl:mb-14">
+        <div className="text-center mb-10 md:mb-14 2xl:mb-16">
           {/* Mobile Fix: Reduced text size to 3xl for mobile, kept [45px] for desktop */}
           <h2 className="text-3xl md:text-[45px] 2xl:text-6xl flex justify-center mb-3 md:mb-1 2xl:mb-2 [@media(max-height:600px)]:mb-0 [@media(max-height:600px)]:text-[40px] font-normal md:font-normal">
             Why Max ROAS Stands Apart
@@ -80,7 +81,7 @@ const Comparison = () => {
             </div>
 
             {/* List */}
-            <ul className="space-y-5">
+            <ul className="space-y-5 [@media(max-height:600px)]:space-y-3">
               {features.map((item, index) => (
                 <li key={index} className="flex items-start gap-3 md:gap-4">
                   <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 [@media(max-height:600px)]:w-5 [@media(max-height:600px)]:h-5">
@@ -99,7 +100,11 @@ const Comparison = () => {
             </ul>
           </div>
         </div>
-
+        <div className="flex justify-center mt-10 md:mt-14 2xl:mt-20">
+           <a href="https://wa.me/+918122497759" target="_blank" rel="noopener noreferrer">
+            <Button text="Make us a Call" invert={true} navigateTo={false} />
+           </a>
+        </div>
       </div>
     </section>
   );

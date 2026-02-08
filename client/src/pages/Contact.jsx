@@ -201,12 +201,6 @@ const Contact = () => {
       </div>
     </section>
 
-    <div className="flex items-center justify-center">
-      <div className="px-5 text-sm laptop:px-8 laptop-lg:px-10 pb-10 flex flex-col items-start justify-start"> 
-        <span className="font-bold mr-2">*DISCLAIMER: </span> 
-        If your brand generates less than ₹3L/month or $5K/month in revenue, this is NOT for you. Please do NOT book, as your request will be automatically CANCELED.
-      </div>
-    </div>
     </>
   );
 };

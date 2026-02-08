@@ -9,20 +9,19 @@ const Scale = () => {
   const textRef = useRef(null);
   
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      const textElement = textRef.current;
+    // 1. Create a MatchMedia instance
+    let mm = gsap.matchMedia();
 
-      // The animation
+    // 2. Define the animation ONLY for Desktop (min-width: 768px)
+    mm.add("(min-width: 768px)", () => {
+      
+      const textElement = textRef.current;
+      
+      // Safety check: if element is hidden/null, don't animate
+      if (!textElement) return;
+
       gsap.to(textElement, {
-        // FUNCTIONAL VALUE: This is key. 
-        // It tells GSAP: "Run this math function every time you refresh"
-        x: () => {
-            // Safety check
-            if (!textElement) return 0;
-            // Calculate distance: -(Text Width - Screen Width)
-            // Adding a small buffer (50px) ensures the last letter clears the screen edge
-            return -(textElement.scrollWidth - window.innerWidth + 50);
-        },
+        x: () => -(textElement.scrollWidth - window.innerWidth + 50),
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -30,26 +29,19 @@ const Scale = () => {
           end: "+=3000", 
           pin: true,
           scrub: 1,
-          // IMPORTANT: This forces the functional 'x' value to re-run on resize/refresh
           invalidateOnRefresh: true, 
         }
       });
-    }, containerRef);
+    });
 
-    // FIX FOR FONT LOADING / NAVIGATION ISSUES:
-    // 1. Force a refresh after a small delay (handles React router transitions)
+    // Font loading fix (kept from your original code)
     const timer = setTimeout(() => {
         ScrollTrigger.refresh();
     }, 500);
 
-    // 2. Force a refresh specifically when fonts finish loading
-    // This fixes the issue where the width is calculated before the custom font is applied
-    document.fonts.ready.then(() => {
-        ScrollTrigger.refresh();
-    });
-
+    // Cleanup function
     return () => {
-        ctx.revert();
+        mm.revert(); // This kills the animation and ScrollTrigger when unmounting
         clearTimeout(timer);
     };
   }, []);
@@ -57,7 +49,7 @@ const Scale = () => {
   return (
     <section 
       ref={containerRef} 
-      className="relative h-screen w-full bg-black overflow-hidden flex items-center perspective-[1000px]"
+      className="relative h-[80px] md:h-screen w-full bg-black overflow-hidden flex items-center justify-center md:justify-start md:perspective-[1000px]"
     >
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
@@ -69,9 +61,21 @@ const Scale = () => {
             }}
         ></div>
       </div>
+      
+      {/* MOBILE VIEW: Static Text (No Ref, No Animation) */}
+      <div className="md:hidden relative z-10 w-full pointer-events-none flex justify-center items-center">
+        <h1 className="text-white font-black whitespace-nowrap leading-none text-center" 
+            style={{
+              fontFamily: "'Slussen Expanded Black', sans-serif", 
+              fontSize: "clamp(1rem, 6vw, 2rem)", // Adjusted for better mobile look
+            }}
+        >
+          GET READY TO SCALE!          
+        </h1>
+      </div>
 
-      {/* The Big Sliding Text */}
-      <div className="relative z-10 w-full pointer-events-none">
+      {/* DESKTOP VIEW: Animated Text (Has Ref) */}
+      <div className="hidden md:block relative z-10 w-full pointer-events-none">
         <h1 
           ref={textRef}
           className="text-white font-black whitespace-nowrap leading-none will-change-transform"

@@ -39,6 +39,7 @@ const Footer = () => {
 
   return (
     <>
+    <section className="md:pt-24 laptop:pt-0 bg-black relative z-0">
       <footer className="footerWrapperStyle">
         {/* Background Big Text */}
         <div className="backgroundTextStyle">MaxROAS</div>
@@ -62,9 +63,9 @@ const Footer = () => {
             {/* 2. Center Column: Brand + Socials */}
             <div className="centerColumnStyle">
                 <div className="flex flex-col leading-none justify-center text-white">
-                    <div className="text-6xl [@media(max-width:385px)]:text-[56px] font-normal">Max</div>
-                    <div className="text-8xl [@media(max-width:385px)]:text-[84px] font-bold roas-text">ROAS</div>
-                    <div className="text-[20px] [@media(max-width:385px)]:text-[18px] mt-1 ml-[8px]">Your in-house digital team</div>
+                    <div className="text-6xl [@media(max-width:385px)]:text-[52px] font-normal">Max</div>
+                    <div className="text-8xl [@media(max-width:385px)]:text-[80px] font-bold roas-text">ROAS</div>
+                    <div className="text-[20px] [@media(max-width:385px)]:text-[17px] mt-1 ml-[8px]">Your in-house digital team</div>
                 </div>
               
               <div className="social-container flex gap-3 md:mt-6">
@@ -125,6 +126,7 @@ const Footer = () => {
 
         </div>
       </footer>
+      </section>
 
       <style>{`
         @font-face {
@@ -227,7 +229,7 @@ const Footer = () => {
           user-select: none;
           pointer-events: none;
           white-space: nowrap;
-          opacity: 0.5;
+          opacity: 0.8;
         }
 
         .footerCardStyle {
@@ -303,16 +305,46 @@ const Footer = () => {
            Using !important ensures we override the inline styles 
            without changing the original JS objects.
         ----------------------------------------------------------------- */
+        @media (max-height: 600px) {
+            .footerWrapperStyle {
+              max-height: 80vh !important; /* Allow height to adjust based on content */
+            }
+            .footerCardStyle {
+                height: 400px !important; /* Overrides 510px fixed height */
+                padding: 30px !important;
+                gap: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .bottomSectionStyle {
+                padding-top: 1rem;
+            }
+            .centerColumnStyle {
+               flex: 1 1 200px;
+               gap: 1rem !important;
+            }
+            .backgroundTextStyle {
+              transform: translateY(20%);
+              left: -2%;
+              font-size: clamp(4rem, 16vw, 12rem);
+              //transform: translateX(-50%); /* Center vertically on smaller screens */
+            }
+        }
         @media (max-width: 768px) {
+
+            .footerWrapperStyle {
+              padding: 2.5rem 1.5rem 5rem;
+              min-height: auto !important; /* Allow height to adjust based on content */
+            }
 
             .roas-text {
                 line-height: 0.8 !important;
             }
 
             .footerCardStyle {
-                height: auto !important; /* Overrides 510px fixed height */
+                height: 530px !important; /* Overrides 510px fixed height */
                 padding-bottom: 3rem !important;
-                gap: 1rem !important;
+                gap: 3rem !important;
+                margin-bottom: 1rem !important;
             }
 
             .topSectionStyle {
@@ -323,6 +355,7 @@ const Footer = () => {
             }
             
             .centerColumnStyle {
+               flex: 1 1 200px;
                gap: 1rem !important;
             }
 
@@ -349,8 +382,9 @@ const Footer = () => {
 
             .backgroundTextStyle {
               font-size: clamp(1rem, 16vw, 6rem) !important; /* Adjust size for smaller screens */
-              transform: translateY(-60%) !important; /* Center vertically on smaller screens */
+              transform: translateY(-20%) !important; /* Center vertically on smaller screens */
               left: -5% !important; /* Keep centered horizontally */
+              
             }
         }
       `}</style>

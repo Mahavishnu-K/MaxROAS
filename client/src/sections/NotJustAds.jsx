@@ -15,11 +15,11 @@ const NotJustAds = () => {
     <section className="relative w-full min-h-screen bg-white flex flex-col items-center justify-center py-24 md:py-28 [@media(max-height:600px)]:py-32 overflow-hidden">
       
       {/* Top Gradient Fade (Vignette Effect) */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-400 to-transparent pointer-events-none opacity-70"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-400 to-transparent pointer-events-none opacity-70"></div> */}
 
       {/* --- MAIN CONTENT --- */}
-    <h2 className="work-heading mb-10 md:mb-0 text-3xl md:text-[46px] 2xl:text-6xl [@media(max-height:600px)]:text-4xl text-center">
-        How We Do It
+    <h2 className="px-4 mb-10 md:mb-0 text-3xl md:text-[46px] 2xl:text-6xl [@media(max-height:600px)]:text-4xl text-center">
+        System Behind the Max ROAS
     </h2>
       <div className="container select-none mx-auto px-4 flex flex-col items-center z-10">
         
@@ -65,7 +65,7 @@ const NotJustAds = () => {
         {/* 2. Typography */}
         <div className="text-center relative">
             <h2 
-                className="text-5xl md:text-6xl 2xl:text-7xl font-black text-black tracking-tight mb-3"
+                className="text-5xl laptop:text-6xl 2xl:text-7xl font-black text-black tracking-tight mb-3"
                 style={{ fontFamily: "'Slussen Expanded Black', sans-serif" }}
             >
                 Not Just Ads!
@@ -84,7 +84,7 @@ const NotJustAds = () => {
         </div>
 
         {/* 3. Bottom Pills / Buttons */}
-        <div className="mt-10 md:mt-16 w-full flex flex-wrap justify-center gap-4 md:gap-4 xl:gap-6">
+        <div className="mt-10 md:mt-10 laptop-lg:mt-16 w-full flex flex-wrap justify-center gap-4 md:gap-4 xl:gap-6">
             
             {/* Feature Pills */}
             {features.map((item, index) => (
@@ -101,7 +101,7 @@ const NotJustAds = () => {
                 onClick={() => navigate('/about-us')}
                 className="group border-2 border-black rounded-full px-6 xl:px-8 py-3 bg-gray-100 text-black font-semibold text-sm md:text-base flex items-center gap-2 hover:bg-black hover:text-white transition-all duration-300"
             >
-                About Us
+                More About Us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
@@ -110,7 +110,7 @@ const NotJustAds = () => {
       </div>
 
       {/* Bottom Gradient Fade (Vignette Effect) */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-400 to-transparent pointer-events-none opacity-70"></div>
+      {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-400 to-transparent pointer-events-none opacity-70"></div> */}
 
     </section>
   );

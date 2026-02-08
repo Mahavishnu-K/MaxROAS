@@ -2,15 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-const Button = ({text = "Start Scaling Now", shadowStatus = false, invert = false }) => {
+const Button = ({text = "Start Scaling Now", shadowStatus = false, invert = false, navigateTo = true }) => {
   const navigate = useNavigate();
   
   // Determine dot color based on invert state
   const dotColor = invert ? "#ffffff" : "#000000";
 
+   const handleClick = () => {
+    if (navigateTo) {
+     
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // "auto" also works if instant isn't supported
+      
+      navigate('/contact');
+    }
+  };
+
   return (
     <StyledWrapper shadowStatus={shadowStatus} invert={invert}>
-      <button onClick={() => navigate('/contact')} className="Btn-Container">
+      <button onClick={handleClick} className="Btn-Container">
         <span className="text">{text}</span>
         <span className="icon-Container">
           <svg viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">

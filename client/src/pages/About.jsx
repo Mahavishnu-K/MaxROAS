@@ -109,7 +109,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl flex justify-center items-center flex-col gap-20 z-10">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl flex justify-center items-center flex-col gap-10 md:gap-20 z-10">
 
         {/* --- SECTION 1: FOUNDERS --- */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -160,13 +160,13 @@ const About = () => {
 
             <div className="parallax-text pb-10">
                 <p className="font-semibold text-center text-xl md:text-2xl mb-4 text-white">What we observed repeatedly</p>
-                <ul className="text-xl md:text-2xl space-y-2 text-center text-gray-300">
-                <li>Agencies don’t work closely with the product or brand reality.</li>
-                <li>Campaigns are handled by freshers or inexperienced executors.</li>
-                <li>Brands struggle to hire or retain expert in-house teams while scaling.</li>
-                <li>Growth becomes unpredictable due to lack of analysis and learnings.</li>
+                <ul className="text-base md:text-2xl space-y-2 md:text-center text-gray-300">
+                <li className="flex items-start gap-3 md:block"><span className="md:hidden mt-2.5 w-2 h-2 bg-white rounded-full flex-shrink-0"></span>Agencies don’t work closely with the product or brand reality.</li>
+                <li className="flex items-start gap-3 md:block"><span className="md:hidden mt-2.5 w-2 h-2 bg-white rounded-full flex-shrink-0"></span>Campaigns are handled by freshers or inexperienced executors.</li>
+                <li className="flex items-start gap-3 md:block"><span className="md:hidden mt-2.5 w-2 h-2 bg-white rounded-full flex-shrink-0"></span>Brands struggle to hire or retain expert in-house teams while scaling.</li>
+                <li className="flex items-start gap-3 md:block"><span className="md:hidden mt-2.5 w-2 h-2 bg-white rounded-full flex-shrink-0"></span>Growth becomes unpredictable due to lack of analysis and learnings.</li>
                 </ul>
-                <p className="mt-4 text-center text-gray-400 italic">
+                <p className="mt-4 text-base md:text-center text-gray-400 italic">
                     This gap between strategy and execution is where most brands lose momentum.
                 </p>
             </div>
@@ -175,7 +175,7 @@ const About = () => {
         {/* --- SECTION 2: LEARNINGS --- */}
         <section className="min-h-[600px] grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Image Left on Desktop */}
-          <div className="lg:col-span-5 order-2 lg:order-1 reveal-image">
+          <div className="hidden md:block lg:col-span-5 order-2 lg:order-1 reveal-image">
              <div className="relative overflow-hidden">
                 <img 
                     src="/about/About2.png" 
@@ -194,6 +194,20 @@ const About = () => {
               <span className="drop-cap text-6xl md:text-[85px] text-[#ffffff] mr-1 float-left">O</span>
               <span className="drop-cap md:inline-block">ur learnings before <br className="hidden md:block"/> launching Max ROAS</span>
             </h2>
+
+            <div className="md:hidden lg:col-span-5 reveal-image">
+              <div className="relative overflow-hidden">
+                  <img 
+                      src="/about/About2.png" 
+                      alt="Strategic planning" 
+                      className="w-full h-auto object-cover cursor-pointer transition-all duration-700"
+                  />
+                  {/* 3+ Years Badge */}
+                  <div className="absolute top-6 left-6 bg-[#ffffff] text-black font-bold px-6 py-2 rounded-full shadow-lg text-lg">
+                      3+ Years
+                  </div>
+              </div>
+            </div>
 
             <div className="parallax-text text-gray-300 text-base md:text-lg leading-relaxed space-y-6">
                 <p>
@@ -234,6 +248,16 @@ const About = () => {
                     We didn’t want to be “just another agency”. So we built Max ROAS to function as,
                 </p>
 
+                <div className="flex md:hidden lg:col-span-5 reveal-image justify-center">
+                    <div className="bg-white rounded-lg p-12 w-full max-w-sm aspect-square flex flex-col justify-center items-center text-left shadow-[0_0_50px_rgba(255,255,255,0.05)]">
+                        <div className="flex flex-col leading-none justify-center text-black">
+                        <div className="text-6xl font-normal">Max</div>
+                        <div className="text-8xl font-bold leading-[0.8]">ROAS</div>
+                        <div className="text-[20px] mt-1 ml-[8px]">Your in-house digital team</div>
+                    </div>
+                    </div>
+                </div>
+
                 {/* Highlight Strip */}
                 <div className="parallax-text my-4">
                     <p className="text-white font-extrabold text-xl md:text-[28px] skew-x-2">
@@ -262,7 +286,7 @@ const About = () => {
             </div>
 
             {/* Logo Box */}
-            <div className="lg:col-span-5 reveal-image flex justify-center">
+            <div className="hidden md:flex lg:col-span-5 reveal-image justify-center">
                 <div className="bg-white rounded-lg p-12 w-full max-w-sm aspect-square flex flex-col justify-center items-center text-left shadow-[0_0_50px_rgba(255,255,255,0.05)]">
                     <div className="flex flex-col leading-none justify-center text-black">
                     <div className="text-6xl font-normal">Max</div>

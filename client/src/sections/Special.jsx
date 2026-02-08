@@ -8,6 +8,8 @@ import Mouri from '../assets/Mouri.png';
 import MuchLove from '../assets/MuchLove.png';
 import Radoss from '../assets/Radoss.webp';
 import Trayee from '../assets/Trayee.png';
+import SilverLady from '../assets/SilverLady.png';
+import SuvaAttire from '../assets/SuvaAttire.png';
 
 import instagram from '/platform/instagram.png';
 import youtube from '/platform/youtube.png';
@@ -25,6 +27,8 @@ const Special = () => {
         { name: "Mouri", src: Mouri },
         { name: "MuchLove", src: MuchLove },
         { name: "Radoss", src: Radoss },
+        { name: "SilverLady", src: SilverLady },
+        { name: "SuvaAttire", src: SuvaAttire },
         { name: "Trayee", src: Trayee },
     ];
 
