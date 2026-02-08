@@ -52,12 +52,22 @@ const Scale = () => {
       className="relative h-[80px] md:h-screen w-full bg-black overflow-hidden flex items-center justify-center md:justify-start md:perspective-[1000px]"
     >
       {/* Background Grid Pattern */}
-      <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
+      <div className="hidden md:block absolute inset-0 z-0 opacity-70 pointer-events-none">
         <div 
             className="w-full h-full"
             style={{
                 backgroundImage: `linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)`,
                 backgroundSize: '4rem 4rem'
+            }}
+        ></div>
+      </div>
+
+      <div className="md:hidden absolute inset-0 z-0 opacity-95 pointer-events-none">
+        <div 
+            className="w-full h-full"
+            style={{
+                backgroundImage: `linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)`,
+                backgroundSize: '1rem 1rem'
             }}
         ></div>
       </div>
