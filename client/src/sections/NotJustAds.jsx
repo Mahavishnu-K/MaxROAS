@@ -18,7 +18,7 @@ const NotJustAds = () => {
       {/* <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-400 to-transparent pointer-events-none opacity-70"></div> */}
 
       {/* --- MAIN CONTENT --- */}
-    <h2 className="px-4 mb-10 md:mb-0 text-3xl md:text-[46px] 2xl:text-6xl [@media(max-height:600px)]:text-4xl text-center">
+    <h2 className="px-16 max-[440px]:px-12 max-[425px]:px-8 max-[380px]:px-4 mb-10 md:mb-0 text-3xl md:text-[46px] 2xl:text-6xl [@media(max-height:600px)]:text-4xl text-center">
         System Behind the Max ROAS
     </h2>
       <div className="container select-none mx-auto px-4 flex flex-col items-center z-10">

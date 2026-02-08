@@ -379,6 +379,10 @@ const Footer = () => {
                 color: #fff;
                 text-decoration: underline;
             }
+            
+            .bottomSectionStyle {
+                padding-top: 1rem;
+            }
 
             .backgroundTextStyle {
               font-size: clamp(1rem, 16vw, 6rem) !important; /* Adjust size for smaller screens */
