@@ -29,6 +29,8 @@ const Scale = () => {
           end: "+=3000", 
           pin: true,
           scrub: 1,
+          pinType: "transform",
+          anticipatePin: 1,
           invalidateOnRefresh: true, 
         }
       });

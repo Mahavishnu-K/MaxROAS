@@ -8,10 +8,10 @@ const Button = ({text = "Start Scaling Now", shadowStatus = false, invert = fals
   // Determine dot color based on invert state
   const dotColor = invert ? "#ffffff" : "#000000";
 
-   const handleClick = () => {
+  const handleClick = () => {
     if (navigateTo) {
      
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // "auto" also works if instant isn't supported
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" }); 
       
       navigate('/contact');
     }

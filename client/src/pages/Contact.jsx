@@ -1,33 +1,47 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy, useRef } from "react";
 import Rounded from "../components/RoundedButton/Rounded.jsx";
 import Button from "@/components/Button/Button.jsx";
-import BlackSphere from "@/components/Background/BlackSphere.jsx";
+
+const BlackSphere = lazy(() => import("@/components/Background/BlackSphere.jsx"));
 
 const Contact = () => {
 
-  function useIsDesktop() {
-    const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Track visibility
+  const sectionRef = useRef(null); // Ref for the section
 
-    useEffect(() => {
-      const check = () => setIsDesktop(window.innerWidth >= 768);
-      check();
-      window.addEventListener("resize", check);
-      return () => window.removeEventListener("resize", check);
-    }, []);
+  // 1. Desktop Check
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
-    return isDesktop;
-  }
+  useEffect(() => {
+    if (!sectionRef.current) return;
 
-  const isDesktop = useIsDesktop();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { rootMargin: "100px" } 
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
     
-    <section className="relative min-h-[700px] md:min-h-screen flex items-center justify-center px-6 md:px-28 2xl:px-12 pt-20 md:pt-32 overflow-hidden">
-      {isDesktop && (
+    <section ref={sectionRef} className="relative min-h-[700px] md:min-h-screen flex items-center justify-center px-6 md:px-28 2xl:px-12 pt-20 md:pt-32 overflow-hidden">
+      {isDesktop && isVisible && (
         <div className="absolute inset-0 z-0">
-          <BlackSphere />
+          {/* Keep the fallback so the UI renders instantly */}
+          <Suspense fallback={<div className="w-full h-full bg-black/5" />}>
+            <BlackSphere />
+          </Suspense>
         </div>
       )}
         

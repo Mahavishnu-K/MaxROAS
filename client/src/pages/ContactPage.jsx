@@ -2,30 +2,46 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Lenis from 'lenis';
+import { gsap } from "gsap"; // Import GSAP
+import { ScrollTrigger } from "gsap/ScrollTrigger"; 
 import Navbar from '../components/Navbar/Navbar.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import Contact from '../pages/Contact.jsx'; 
 import Scale from '../components/TextParallax/Scale.jsx';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ContactPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // --- ADD THIS LINE ---
     window.scrollTo(0, 0); 
-    // --------------------
 
-    const lenis = new Lenis({ smooth: true, lerp: 0.8 });
-    
-    // Optional: Also tell Lenis to start at 0
-    lenis.scrollTo(0, { immediate: true });
+    // 1. Initialize Lenis
+    const lenis = new Lenis({ 
+      smooth: true, 
+      lerp: 0.1, // Lower lerp = smoother, heavy feel. 0.1 is standard.
+      duration: 1.5, 
+    });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    return () => lenis.destroy();
+    // 2. CRITICAL: Connect Lenis to ScrollTrigger
+    // This tells ScrollTrigger to update every time Lenis scrolls
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // 3. Use GSAP Ticker to drive Lenis
+    // This ensures GSAP animations and Lenis scroll happen in the exact same frame
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    // 4. Disable lag smoothing in GSAP to prevent jumps during heavy loads
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      // Cleanup
+      gsap.ticker.remove((time) => lenis.raf(time * 1000));
+      lenis.destroy();
+    };
   }, []);
 
   // Handle Navbar clicks on the contact page
@@ -51,7 +67,6 @@ const ContactPage = () => {
         refs={mockRefs}
       />
       
-      {/* Add padding-top to account for fixed Navbar */}
         <Contact />
         <Scale />
       <Footer />

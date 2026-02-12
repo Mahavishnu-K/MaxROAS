@@ -76,6 +76,11 @@ const DesktopNavbar = ({ currentActive, handleNavClick }) => {
   const btnRef = useRef(null);
   const navigate = useNavigate();
 
+  const handleContactClick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" }); 
+    navigate('/contact');
+  };
+
   const onEnter = () => {
     const tl = gsap.timeline();
     tl.to(btnRef.current, {
@@ -129,7 +134,7 @@ const DesktopNavbar = ({ currentActive, handleNavClick }) => {
           ref={btnRef}
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
-          onClick={() => navigate("/contact")}
+          onClick={handleContactClick}
           className="border-none flex items-center gap-3 2xl:gap-5 bg-black text-white px-4 py-2 2xl:px-5 2xl:py-3 rounded-full whitespace-nowrap relative overflow-hidden"
           style={{ willChange: "border-radius, transform" }}
         >
@@ -151,6 +156,11 @@ const DesktopNavbar = ({ currentActive, handleNavClick }) => {
 const MobileNavbar = ({ currentActive, handleNavClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" }); 
+    navigate('/contact');
+  };
 
   // FIX: Added cleanup function to restore scroll if component unmounts
   useEffect(() => {
@@ -198,7 +208,7 @@ const MobileNavbar = ({ currentActive, handleNavClick }) => {
           ))}
           
           <button
-             onClick={() => { setIsOpen(false); navigate("/contact"); }}
+             onClick={handleContactClick}
              className="mt-8 bg-black text-white px-8 py-3 rounded-full text-xl"
           >
             Contact Us
