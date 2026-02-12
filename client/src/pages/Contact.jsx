@@ -1,16 +1,35 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Rounded from "../components/RoundedButton/Rounded.jsx";
 import Button from "@/components/Button/Button.jsx";
 import BlackSphere from "@/components/Background/BlackSphere.jsx";
 
 const Contact = () => {
+
+  function useIsDesktop() {
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+      const check = () => setIsDesktop(window.innerWidth >= 768);
+      check();
+      window.addEventListener("resize", check);
+      return () => window.removeEventListener("resize", check);
+    }, []);
+
+    return isDesktop;
+  }
+
+  const isDesktop = useIsDesktop();
+
   return (
     <>
     
     <section className="relative min-h-[700px] md:min-h-screen flex items-center justify-center px-6 md:px-28 2xl:px-12 pt-20 md:pt-32 overflow-hidden">
-      <div className="hidden md:block absolute inset-0 z-0">
-        <BlackSphere />
-      </div>
+      {isDesktop && (
+        <div className="absolute inset-0 z-0">
+          <BlackSphere />
+        </div>
+      )}
         
         {/* --- LEFT COLUMN: Text & Socials --- */}
       <div className="absolute left-[8%] top-[18%] md:left-[3%] md:top-[30%] flex flex-col md:flex-row justify-center z-10 md:justify-between h-fit w-fit">
