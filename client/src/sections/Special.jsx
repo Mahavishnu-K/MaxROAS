@@ -10,6 +10,7 @@ import Radoss from '../assets/Radoss.webp';
 import Trayee from '../assets/Trayee.png';
 import SilverLady from '../assets/SilverLady.png';
 import SuvaAttire from '../assets/SuvaAttire.png';
+import Kanali from '../assets/Kanali.png';
 
 import instagram from '/platform/instagram.png';
 import youtube from '/platform/youtube.png';
@@ -30,6 +31,7 @@ const Special = () => {
         { name: "SilverLady", src: SilverLady },
         { name: "SuvaAttire", src: SuvaAttire },
         { name: "Trayee", src: Trayee },
+        { name: "Kanali", src: Kanali },
     ];
 
     const socialPlatforms = [

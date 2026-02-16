@@ -81,7 +81,7 @@ const Hero = () => {
             
             {/* Description */}
             <p className="hero-subtext opacity-0 translate-y-[100%] text-[26px] md:text-4xl 2xl:text-5xl 2xl:leading-[1.45] [@media(max-height:600px)]:leading-[1.45] [@media(max-height:600px)]:text-[34px]">
-                We help brands scale 2x revenue on top of what you’re <br className="hidden md:block" /> already making; all within just 30 days.
+                We help brands scale 2x revenue on top of what they're <br className="hidden md:block" /> already making; all within just 30 days.
             </p>
 
             <div className="hero-card-container opacity-0 translate-y-10 w-full flex justify-center">

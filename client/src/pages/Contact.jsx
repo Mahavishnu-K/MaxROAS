@@ -1,62 +1,42 @@
-import React, { useState, useEffect, Suspense, lazy, useRef } from "react";
+import React from "react";
 import Rounded from "../components/RoundedButton/Rounded.jsx";
 import Button from "@/components/Button/Button.jsx";
 
-const BlackSphere = lazy(() => import("@/components/Background/BlackSphere.jsx"));
 
 const Contact = () => {
-
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [isVisible, setIsVisible] = useState(true); // Track visibility
-  const sectionRef = useRef(null); // Ref for the section
-
-  // 1. Desktop Check
-  useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { rootMargin: "100px" } 
-    );
-
-    observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <>
     
-    <section ref={sectionRef} className="relative min-h-[700px] md:min-h-screen flex items-center justify-center px-6 md:px-28 2xl:px-12 pt-20 md:pt-32 overflow-hidden">
-      {isDesktop && isVisible && (
-        <div className="absolute inset-0 z-0">
-          {/* Keep the fallback so the UI renders instantly */}
-          <Suspense fallback={<div className="w-full h-full bg-black/5" />}>
-            <BlackSphere />
-          </Suspense>
-        </div>
-      )}
+    <section className="relative min-h-[700px] md:min-h-screen flex items-center md:items-start justify-center px-6 md:px-28 2xl:px-12 pt-20 md:pt-32 overflow-hidden">
         
         {/* --- LEFT COLUMN: Text & Socials --- */}
-      <div className="absolute left-[8%] top-[18%] md:left-[3%] md:top-[30%] flex flex-col md:flex-row justify-center z-10 md:justify-between h-fit w-fit">
+      <div className="hidden md:block laptop:pt-10 laptop-lg:pt-28 h-fit w-fit">
 
         {/* Heading */}
-        <div>
+        <div className="md:text-center md:flex md:flex-col md:justify-center md:items-center">
           <h1 className="text-6xl xl:text-7xl laptop:text-8xl text-black font-light mb-6 tracking-tight">
             Let’s Talk
           </h1>
 
           {/* Description */}
-          <p className="text-lg xl:text-lg laptop:text-xl max-w-[350px] leading-relaxed mb-6">
-            Connect with us today and unlock your brand potential.<br /> Inquiries, collaborations, or just to say hello. We're eager to connect!
+          <p className="text-lg xl:text-lg laptop:text-xl max-w-[350px] md:max-w-[550px] xl:max-w-[600px] laptop:max-w-[750px] leading-relaxed mb-6">
+            Connect with us today and unlock your brand potential.<br className="md:hidden" /> Inquiries, collaborations, or just to say hello. We're eager to connect!
+          </p>
+        </div>
+
+      </div>
+
+      <div className="md:hidden absolute left-[8%] top-[18%] flex flex-col md:flex-row justify-center z-10 md:justify-between h-fit w-fit">
+        {/* Heading */}
+        <div className="md:text-center md:flex md:flex-col md:justify-center md:items-center">
+          <h1 className="text-6xl xl:text-7xl laptop:text-8xl text-black font-light mb-6 tracking-tight">
+            Let’s Talk
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg xl:text-lg laptop:text-xl max-w-[350px] md:max-w-[550px] xl:max-w-[600px] laptop:max-w-[750px] leading-relaxed mb-6">
+            Connect with us today and unlock your brand potential.<br className="md:hidden" /> Inquiries, collaborations, or just to say hello. We're eager to connect!
           </p>
         </div>
 
@@ -80,7 +60,7 @@ const Contact = () => {
           <div className="flex items-end gap-4 md:gap-2 xl:gap-4 laptop:gap-8">
             
             {/* Instagram */}
-            <a href="#" className="flex items-end gap-6 group w-fit">
+            <a href="https://www.instagram.com/maxroas.in/" target="_blank" rel="noopener noreferrer" className="flex items-end gap-6 group w-fit">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
@@ -137,7 +117,7 @@ const Contact = () => {
             </a> */}
 
             {/* WhatsApp */}
-            <a href="https://wa.me/+918122497759" className="flex items-center gap-6 group w-fit">
+            <a  href="https://wa.me/+918122497759" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group w-fit">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
@@ -178,25 +158,27 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="hidden md:block absolute right-[3%] top-[30%] w-fit">
+      <div className="hidden md:block absolute left-[3%] top-[50%] w-fit">
         <div className="mb-10">
-          <div className="flex flex-col md:items-end md:text-right">
+          <div className="flex flex-col">
             <p className="text-2xl md:text-5xl laptop:text-6xl font-medium mb-2">Contact</p>
-            <a target="_blank" href="https://wa.me/+918122497759"><p className="border-black xl:text-3xl laptop:text-4xl border-b-2 w-fit leading-[15px]">+91 81224 97759</p></a>
+            <a target="_blank" href="https://wa.me/+918122497759"><p className="border-black md:text-2xl xl:text-3xl laptop:text-4xl border-b-2 w-fit leading-[15px]">+91 81224 97759</p></a>
           </div>
           {/* <div>
             <p className="text-2xl font-medium">Mail</p>
             <p>maxroasindia@gmail.com</p>
           </div> */}
         </div>
+      </div>
 
+      <div className="hidden md:block absolute right-[3%] top-[50%] w-fit">
         {/* Social Links */}
         <div className="flex flex-col md:items-end">
           <p className="text-2xl md:text-5xl laptop:text-6xl flex items-end font-medium mb-3">Socials</p>
           <div className="flex items-end gap-4 md:gap-2 xl:gap-4 laptop:gap-8">
             
             {/* Instagram */}
-            <a href="#" className="flex items-end gap-6 group w-fit">
+            <a href="https://www.instagram.com/maxroas.in/" target="_blank" rel="noopener noreferrer" className="flex items-end gap-6 group w-fit">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
@@ -253,7 +235,7 @@ const Contact = () => {
             </a> */}
 
             {/* WhatsApp */}
-            <a href="https://wa.me/+918122497759" className="flex items-center gap-6 group w-fit">
+            <a href="https://wa.me/+918122497759" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group w-fit">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Rounded
                     backgroundColor="#000000"
@@ -294,13 +276,11 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-[5%] flex justify-center z-10 ">
+      <div className="absolute bottom-[5%] md:bottom-[20%] flex justify-center z-10 ">
           <a href="https://wa.me/+918122497759" target="_blank" rel="noopener noreferrer">
             <Button text="Reach us Now!" navigateTo={false} />
           </a>
       </div>
-
-      <div className="hidden md:block absolute bottom-0 right-0 bg-[#eeeeee] h-16 w-40"></div>
 
         {/* --- RIGHT COLUMN: Form --- */}
         {/* <div className="bg-white p-0 md:p-8 w-full">
