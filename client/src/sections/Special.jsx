@@ -2,13 +2,15 @@ import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 // Images
-import FitMom from '../assets/FitMom.png';
 import MorenaLabel from '../assets/MorenaLabel.png';
 import Mouri from '../assets/Mouri.png';
 import MuchLove from '../assets/MuchLove.png';
 import Radoss from '../assets/Radoss.webp';
+import Bramaramba from '../assets/Bramaramba.webp';
 import Trayee from '../assets/Trayee.png';
 import SilverLady from '../assets/SilverLady.png';
+import Eyal from '../assets/Eyal.jpg';
+import TT from '../assets/TT.jpg';
 import SuvaAttire from '../assets/SuvaAttire.png';
 import Kanali from '../assets/Kanali.png';
 
@@ -23,12 +25,14 @@ const Special = () => {
     const sliderRef = useRef(null);
 
     const clients = [
-        { name: "FitMom", src: FitMom },
         { name: "MorenaLabel", src: MorenaLabel },
         { name: "Mouri", src: Mouri },
         { name: "MuchLove", src: MuchLove },
         { name: "Radoss", src: Radoss },
+        { name: "Bramaramba", src: Bramaramba },
         { name: "SilverLady", src: SilverLady },
+        { name: "Eyal", src: Eyal },
+        { name: "TT", src: TT },
         { name: "SuvaAttire", src: SuvaAttire },
         { name: "Trayee", src: Trayee },
         { name: "Kanali", src: Kanali },
